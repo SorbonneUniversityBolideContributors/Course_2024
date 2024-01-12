@@ -1,0 +1,144 @@
+#VRML_SIM R2023a utf8
+PROTO Virage1Ext [
+ 
+]
+{
+	Solid {
+	  translation 3 0 0
+	  rotation 0 0 1 -1.5707953071795862
+	  children [
+		Solid {
+		  translation -1.5 -0.5 0.19
+		  rotation 0 0 1 -1.5707953071795862
+		  children [
+		    Shape {
+		      appearance PBRAppearance {
+		        baseColor 0 1 0
+		        roughness 0.5
+		        metalness 0
+		      }
+		      geometry Mesh {
+		        url [
+		          "./obj/ImageToStl.com_virage.obj"
+		        ]
+		      }
+		    }
+		  ]
+		  name "solid(1)"
+		  boundingObject Mesh {
+		    url [
+		      "./obj/ImageToStl.com_virage.obj"
+		    ]
+		  }
+		}
+		Solid {
+		  translation 1.5 -0.5 0.19
+		  rotation 0 0 1 3.14159
+		  children [
+		    Shape {
+		      appearance PBRAppearance {
+		        baseColor 0 1 0
+		        roughness 0.5
+		        metalness 0
+		      }
+		      geometry Mesh {
+		        url [
+		          "./obj/ImageToStl.com_virage.obj"
+		        ]
+		      }
+		    }
+		  ]
+		  name "solid(2)"
+		  boundingObject Mesh {
+		    url [
+		      "./obj/ImageToStl.com_virage.obj"
+		    ]
+		  }
+		}
+		Solid {
+		  translation -2.4867064689484236e-05 4.450213954187987e-05 0.18967883002780997
+		  rotation 0.9999999753241107 -0.0002021277736614349 9.217451552653215e-05 1.5699784520172815
+		  children [
+		    Shape {
+		      appearance PBRAppearance {
+		        baseColor 0 1 0
+		        roughness 0.5
+		        metalness 0
+		      }
+		      geometry Mesh {
+		        url [
+		          "./obj/ImageToStl.com_bloc_1m.obj"
+		        ]
+		      }
+		    }
+		  ]
+		  boundingObject Mesh {
+		    url [
+		      "./obj/ImageToStl.com_bloc_1m.obj"
+		    ]
+		  }
+		  physics Physics {
+		  }
+		  linearVelocity 2.342654987984469e-06 3.2968569834335285e-07 -8.103751335504034e-06
+		  angularVelocity -1.7968387635256468e-06 2.395927966569402e-07 -1.8140185603343429e-06
+		}
+		Solid {
+		  translation 0.9999900354654693 8.647930899652323e-05 0.189397163192616
+		  rotation 0.9999999942243755 -9.480327032485941e-05 5.0631894243668884e-05 1.5700218398819559
+		  children [
+		    Shape {
+		      appearance PBRAppearance {
+		        baseColor 0 1 0
+		        roughness 0.5
+		        metalness 0
+		      }
+		      geometry Mesh {
+		        url [
+		          "./obj/ImageToStl.com_bloc_1m.obj"
+		        ]
+		      }
+		    }
+		  ]
+		  name "solid(3)"
+		  boundingObject Mesh {
+		    url [
+		      "./obj/ImageToStl.com_bloc_1m.obj"
+		    ]
+		  }
+		  physics Physics {
+		  }
+		  linearVelocity 6.333682974200558e-07 6.225192278628633e-07 2.3981226978021555e-06
+		  angularVelocity 1.2549622037139542e-06 5.857135633088408e-08 -3.2441770919179636e-07
+		}
+		Solid {
+		  translation -1.0000152496274755 -0.00013098083315377096 0.18998652842199515
+		  rotation 0.9999999933178295 -0.00010765801732223453 4.2119972064806084e-05 1.569999762244538
+		  children [
+		    Shape {
+		      appearance PBRAppearance {
+		        baseColor 0 1 0
+		        roughness 0.5
+		        metalness 0
+		      }
+		      geometry Mesh {
+		        url [
+		          "./obj/ImageToStl.com_bloc_1m.obj"
+		        ]
+		      }
+		    }
+		  ]
+		  name "solid(4)"
+		  boundingObject Mesh {
+		    url [
+		      "./obj/ImageToStl.com_bloc_1m.obj"
+		    ]
+		  }
+		  physics Physics {
+		  }
+		  linearVelocity -2.9760232853481696e-06 -9.52204926430383e-07 5.704042518454571e-06
+		  angularVelocity -2.764421798636762e-06 -2.9829123063445713e-07 -1.4711128482984106e-06
+		}
+	  ]
+	  name "virage ext 1"
+	}
+}
