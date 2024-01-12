@@ -14,4 +14,5 @@ The project is divided into three main parts:
 https://ajuton-ens.github.io/CourseVoituresAutonomesSaclay/
 
 ## Getting Started
-TODO
+
+Check the `Robot_setup.md` file to get started with the robot.
