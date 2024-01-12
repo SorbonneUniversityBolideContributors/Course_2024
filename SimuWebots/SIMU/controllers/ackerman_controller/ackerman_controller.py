@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
+__author__ = "Eliot CHRISTON"
+__version__ = "2.0.0"
+
 """ackerman_controller controller."""
 
 import rospy 
