@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """ackerman_controller controller."""
 
 import rospy 
 import numpy as np 
-import message_filters  
-
+from threading import Lock
 from vehicle import Driver
 from controller import Lidar, Camera, DistanceSensor
-from std_msgs.msg import Float32, Float32MultiArray, Int16MultiArray
+from control_bolide.msg import SpeedDirection
+from std_msgs.msg import Float32MultiArray, Int16MultiArray
 
 class RosController : 
     
@@ -29,19 +31,27 @@ class RosController :
         # Movement parameters 
         self.max_speed, self.max_angle = max_speed, max_angle
         self.current_speed, self.current_angle = 0.0, 0.0
+
+        # Add a lock for thread safety
+        self.lock = Lock()
         
         # Sensor publishers 
         self.lidar_scan, self.image_scan, self.sensors_scan = Float32MultiArray(), Int16MultiArray(), Float32MultiArray() 
-        self.pub_scan = rospy.Publisher("/LidarScan", Float32MultiArray, queue_size=1)
-        self.pub_img  = rospy.Publisher("/ImageScan", Int16MultiArray, queue_size=1)
+        self.pub_scan = rospy.Publisher("/raw_lidar_data", Float32MultiArray, queue_size=1)
+        self.pub_img  = rospy.Publisher("/raw_camera_data", Int16MultiArray, queue_size=1)
         self.pub_sens = rospy.Publisher("/SensorsScan", Float32MultiArray, queue_size=1)
-   
+    
 
-    def apply_command(self, msg_speed, msg_angle) : 
+    def apply_command(self, msg_cmd_vel) :
         """ Applying speed to vehicle motors """
-         
-        self.current_speed = msg_speed.data * self.max_speed
-        self.current_angle = msg_angle.data * self.max_angle 
+        
+        # Getting speed and angle from message
+        msg_speed, msg_angle = msg_cmd_vel.speed, msg_cmd_vel.direction
+
+        print("Speed : ", msg_speed, "Angle : ", msg_angle)
+
+        self.current_speed = msg_speed * self.max_speed
+        self.current_angle = msg_angle * self.max_angle 
         
         # Clipping to max value
         if self.current_speed > self.max_speed : self.current_speed = self.max_speed     
@@ -50,8 +60,9 @@ class RosController :
         elif self.current_angle < -1*self.max_angle : self.current_angle = -1*self.max_angle 
 
         # Applying speed 
-        driver.setCruisingSpeed(self.current_speed)
-        driver.setSteeringAngle(self.current_angle)
+        with self.lock :
+            driver.setCruisingSpeed(self.current_speed)
+            driver.setSteeringAngle(self.current_angle)
    
 
     def publish_scan(self, event) :
@@ -72,7 +83,7 @@ class RosController :
         self.pub_sens.publish(self.sensors_scan)
    
    
-print("ROS Controller initialisation") 
+print("ROS Controller initialization") 
 driver = Driver()      
 rospy.init_node('ackerman_controller', anonymous=True)
 
@@ -84,17 +95,10 @@ rc = RosController(driver)
 rospy.Timer(rospy.Duration(TIME_SCAN), rc.publish_scan)
 rospy.Timer(rospy.Duration(TIME_IMG),  rc.publish_image)
 rospy.Timer(rospy.Duration(TIME_SENS), rc.publish_sensors)
-print("Controller initialized : publishing in ROS topics : \n-/LidarScan : Lidar datas\n-/ImageScan : Camera datas\n-/SensorsScan : TOFs datas")
+print("Controller initialized: publishing in ROS topics:\n-/LidarScan: Lidar data\n-/ImageScan: Camera data\n-/SensorsScan: TOFs data")
 
-while driver.step() != -1: 
-     
-    # Reading speed/angle commands 
-    topic_speed = rospy.get_param("speed_topic", default="/SpeedCommand")
-    topic_angle = rospy.get_param("angle_topic", default="/AngleCommand")
-    speed_sub = message_filters.Subscriber(topic_speed, Float32, queue_size=1, buff_size=1024)
-    angle_sub = message_filters.Subscriber(topic_angle, Float32, queue_size=1, buff_size=1024)
-    
-    # Applying commands
-    ts = message_filters.ApproximateTimeSynchronizer([speed_sub, angle_sub], queue_size=1, slop=0.1, allow_headerless=True)
-    ts.registerCallback(rc.apply_command)
-  
+# Create subscriber outside the loop
+cmd_vel_sub = rospy.Subscriber("/cmd_vel", SpeedDirection, rc.apply_command, queue_size=1, buff_size=1024)
+
+while driver.step() != -1:
+    pass
