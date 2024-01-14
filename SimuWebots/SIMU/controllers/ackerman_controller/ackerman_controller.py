@@ -52,8 +52,6 @@ class RosController :
         # Getting speed and angle from message
         msg_speed, msg_angle = msg_cmd_vel.speed, msg_cmd_vel.direction
 
-        print("Speed : ", msg_speed, "Angle : ", msg_angle)
-
         self.current_speed = msg_speed * self.max_speed
         self.current_angle = msg_angle * self.max_angle 
         
