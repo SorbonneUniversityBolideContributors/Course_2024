@@ -1,0 +1,233 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/abstract/Car.proto"
+EXTERNPROTO "TT02Wheel.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/devices/slamtec/protos/RpLidarA2.proto"
+
+PROTO TT02_2023b [
+  field SFVec3f    translation     0 0 0.036               # Is `Transform.translation`.
+  field SFRotation rotation        0 0 1 0                 # Is `Transform.rotation`.
+  field SFString   name            "TT02_2023b"            # Is `Solid.name`.
+  field SFString   controller      "<generic>"             # Is `Robot.controller`.
+  field MFString   controllerArgs  []                      # Is `Robot.controllerArgs`.
+  field SFString   window          "<generic>"             # Is `Robot.window`.
+  field SFBool     synchronization TRUE                    # Is `Robot.synchronization`.
+  field SFColor    color           0.69 0.0 1.0            # Is `Material.diffuseColor`.            
+  field SFInt32    lidarHorizontalResolution 360           # Is `Lidar.HorizontalResolution`.
+  field SFFloat    lidarMinRange             0.1           # Is `Lidar.minRange`.
+  field SFFloat    lidarMaxRange             12.0          # Is `Lidar.maxRange`.
+  field SFFloat    lidarNoise_OverMaxRange   0.000833      # Is `Lidar.noise`.
+  field SFFloat    lidarResolution           0.01          # Is `Lidar.resolution`.
+  field SFFloat    lidarDefaultFrequency     12            # Is `Lidar.defaultFrequency`.
+]
+{
+  Car {
+    translation IS translation
+    rotation IS rotation
+    name IS name
+    model "TT02"
+    controller IS controller
+    controllerArgs IS controllerArgs
+    window IS window
+    synchronization IS synchronization
+    trackFront                     0.15
+    trackRear                      0.15
+    wheelbase                      0.257
+    minSteeringAngle               -0.35
+    maxSteeringAngle               0.35
+    suspensionFrontSpringConstant  100000
+    suspensionFrontDampingConstant 4000
+    suspensionRearSpringConstant   100000
+    suspensionRearDampingConstant  4000
+    wheelsDampingConstant          5
+    wheelFrontRight                TT02Wheel { name "front right wheel" }
+    wheelFrontLeft                 TT02Wheel { name "front left wheel"}
+    wheelRearRight                 TT02Wheel { name "rear right wheel"}
+    wheelRearLeft                  TT02Wheel { name "rear left wheel"}
+    type                    "4x4"
+    engineType              "electric"
+    engineSound             ""
+    brakeCoefficient        700
+    time0To100              10
+    engineMaxTorque         0.0234
+    engineMaxPower          32
+    engineMinRPM            1
+    engineMaxRPM            13800
+    gearRatio               [-0.62 0.62]
+    maxVelocity             36
+    extensionSlot [
+      Accelerometer {
+        name "accelerometer"
+        xAxis TRUE
+        yAxis TRUE
+        zAxis TRUE
+      }
+      Emitter {
+      }
+      Speaker {
+        translation 0.257 0 0
+        name "TT02_speaker"
+      }
+      Lidar {
+        translation 0.2 0 0.079
+        children [
+          Pose {
+            translation 0 0 -0.031
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 0 0
+                  baseColorMap ImageTexture {
+                    url [
+                      "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/textures/matte_car_paint/matte_car_paint_base_color.jpg"
+                    ]
+                    filtering 5
+                  }
+                  roughnessMap ImageTexture {
+                    url [
+                      "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/textures/matte_car_paint/matte_car_paint_roughness.jpg"
+                    ]
+                    filtering 5
+                  }
+                  metalness 0
+                  normalMapFactor 0.5
+                  textureTransform TextureTransform {
+                    scale 10 10
+                  }
+                }
+                geometry Mesh {
+                  url [
+                    "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/devices/slamtec/protos/meshes/rplidar_bottom.obj"
+                  ]
+                }
+              }
+            ]
+          }
+          Pose {
+            translation 0 0 -0.012
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.11 0.11 0.11
+                  baseColorMap ImageTexture {
+                    url [
+                      "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/textures/matte_car_paint/matte_car_paint_base_color.jpg"
+                    ]
+                    filtering 5
+                  }
+                  roughnessMap ImageTexture {
+                    url [
+                      "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/textures/matte_car_paint/matte_car_paint_roughness.jpg"
+                    ]
+                    filtering 5
+                  }
+                  metalness 0
+                  normalMapFactor 0.5
+                  textureTransform TextureTransform {
+                    scale 10 10
+                  }
+                }
+                geometry Cylinder {
+                  height 0.005
+                  radius 0.037
+                }
+              }
+            ]
+          }
+        ]
+        name "RpLidarA2"
+        boundingObject Pose {
+          translation 0 0 -0.011
+          children [
+            Cylinder {
+              height 0.04
+              radius 0.038
+            }
+          ]
+        }
+        physics Physics {
+          density -1
+          mass 0.2
+        }
+        horizontalResolution IS lidarHorizontalResolution
+        numberOfLayers 1
+        near 0.05
+        minRange IS lidarMinRange
+        maxRange IS lidarMaxRange 
+        type "rotating"
+        noise IS lidarNoise_OverMaxRange
+        resolution IS lidarResolution
+        defaultFrequency IS lidarDefaultFrequency
+        rotatingHead Solid {
+          translation 0 0 -0.0314
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                baseColorMap ImageTexture {
+                  url [
+                    "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/textures/matte_car_paint/matte_car_paint_base_color.jpg"
+                  ]
+                  filtering 5
+                }
+                roughnessMap ImageTexture {
+                  url [
+                    "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/textures/matte_car_paint/matte_car_paint_roughness.jpg"
+                  ]
+                  filtering 5
+                }
+                metalness 0
+                normalMapFactor 0.5
+                textureTransform TextureTransform {
+                  scale 10 10
+                }
+              }
+              geometry Mesh {
+                url [
+                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/devices/slamtec/protos/meshes/rplidar_top.obj"
+                ]
+              }
+            }
+          ]
+        }
+      }
+      Transform {
+        translation 0.127 0 -0.02
+        rotation 0 0 1 0
+        scale 1 1 1
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor IS color
+              roughness 1
+              metalness 0
+            }
+            geometry Mesh {
+              url [
+                "ChevroletCamaroLight.stl"
+              ]
+            }
+            castShadows FALSE
+          }
+        ]
+      }
+    ]
+    boundingObject Group {
+      children [
+        Pose {
+          translation 0.119 0 0.04
+          children [
+            Box {
+              size 0.44 0.195 0.131
+            }
+          ]
+        }
+      ]
+    }
+    physics Physics {
+      density -1
+      mass 2.331
+    }
+    radarCrossSection 100
+  }
+}
