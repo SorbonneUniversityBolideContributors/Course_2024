@@ -102,7 +102,12 @@ rospy.Timer(rospy.Duration(TIME_SENS), rc.publish_sensors)
 print("Controller initialized: publishing in ROS topics:\n-/LidarScan: Lidar data\n-/ImageScan: Camera data\n-/SensorsScan: TOFs data")
 
 # Create subscriber outside the loop
-cmd_vel_sub = rospy.Subscriber("/cmd_vel", SpeedDirection, rc.apply_command, queue_size=1, buff_size=1024)
+cmd_vel_sub = rospy.Subscriber("/cmd_vel", SpeedDirection, rc.apply_command, queue_size=1)
 
-while driver.step() != -1:
-    pass
+
+rate = rospy.Rate(30)
+while not rospy.is_shutdown():
+    # Your control logic here
+    if driver.step() == -1:
+        break
+    rate.sleep()
