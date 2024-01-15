@@ -19,7 +19,7 @@ class YellowController():
         
         self.driver = driver
 
-        self.pub_scan = rospy.Publisher("raw_lidar_data", LaserScan, queue_size=10)
+        self.pub_scan = rospy.Publisher("/yellow_bot/raw_lidar_data", LaserScan, queue_size=10)
 
         self.sub_cmd_vel = rospy.Subscriber("cmd_vel", SpeedDirection, self.cmd_vel_callback)
 
