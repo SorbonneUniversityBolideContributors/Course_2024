@@ -67,13 +67,35 @@ class RosController :
             driver.setSteeringAngle(self.current_angle)
    
 
+    def rescale_to_360(self, data) :
+        """ Rescaling data from 800 to 360 points """
+        # the lidar has 800 points, we want to rescale it to 360 points
+        num_degrees = 360
+        num_bin = 800
+        bin_size = num_bin / num_degrees
+
+        # Create an array to store the resampled data
+        resampled_data = np.zeros(num_degrees)
+
+        # Resample the data
+        for i in range(num_degrees):
+            # Find the corresponding bin index
+            bin_index = int(i / bin_size)
+            
+            # Calculate the average distance for the bin
+            resampled_data[i] = np.mean(data[bin_index])
+
+        return resampled_data
+
     def publish_scan(self, event) :
         try : 
             self.lidar.enable(self.time_step)
-            self.lidar_scan.data = self.lidar.getRangeImage() 
+            self.lidar_scan.data = self.lidar.getRangeImage()
+            self.lidar_scan.data = self.rescale_to_360(self.lidar_scan.data)
             self.pub_scan.publish(self.lidar_scan)
             self.lidar.disable()
-        except : print("[WRN] - Lidar encountered an issue at this iteration") ; return 
+        except Exception as e :
+            print("Error while publishing scan", e)
         
   
     def publish_image(self, event) : 
