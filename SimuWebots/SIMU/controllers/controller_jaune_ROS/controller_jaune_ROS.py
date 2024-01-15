@@ -49,7 +49,7 @@ class YellowController():
         self.speed = 0
 
         # Steering
-        self.maxSteeringAngle = 16 * np.pi/180 # rad
+        self.maxSteeringAngle = 35 * np.pi/180 # rad
         self.steeringAngle = 0
 
 
@@ -94,12 +94,13 @@ class YellowController():
         return resampled_data
 
 
-    def publishScan(self, event):
+    def simulationStep(self, event):
+        
+        # lidar
         self.lidarScan.ranges = self.treat_lidar_data( self.lidar.getRangeImage() )
         self.lidarScan.header.stamp = rospy.Time.now()
         self.pub_scan.publish(self.lidarScan)
 
-    def applyCommand(self, event):
         self.applyCommand()
 
 
@@ -114,10 +115,8 @@ rospy.init_node('Yellow_controller', anonymous=True)
 
 robot_controller = YellowController(driver)
 
-TIME_SCAN = 1.0/12.0
-TIME_APPLY_COMMAND = 1.0/25.0
-rospy.Timer(rospy.Duration(TIME_SCAN), robot_controller.publishScan)
-rospy.Timer(rospy.Duration(TIME_APPLY_COMMAND), robot_controller.applyCommand)
+TIME_SIMU = 1.0/12.0
+rospy.Timer(rospy.Duration(TIME_SIMU), robot_controller.simulationStep)
 print("Controller initialized: publishing in ROS topics:\n-raw_lidar_data")
 
 
