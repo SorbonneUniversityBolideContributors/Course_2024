@@ -13,6 +13,7 @@ from vehicle import Driver
 from controller import Lidar, Camera, DistanceSensor
 from control_bolide.msg import SpeedDirection
 from std_msgs.msg import Float32MultiArray, Int16MultiArray
+from sensor_msgs.msg import LaserScan
 
 class RosController : 
     
@@ -40,10 +41,19 @@ class RosController :
         self.lock = Lock()
         
         # Sensor publishers 
-        self.lidar_scan, self.image_scan, self.sensors_scan = Float32MultiArray(), Int16MultiArray(), Float32MultiArray() 
-        self.pub_scan = rospy.Publisher("/raw_lidar_data", Float32MultiArray, queue_size=1)
-        self.pub_img  = rospy.Publisher("/raw_camera_data", Int16MultiArray, queue_size=1)
-        self.pub_sens = rospy.Publisher("/SensorsScan", Float32MultiArray, queue_size=1)
+        self.lidar_scan, self.image_scan, self.sensors_scan = LaserScan(), Int16MultiArray(), Float32MultiArray() 
+        self.pub_scan = rospy.Publisher("/raw_lidar_data", LaserScan, queue_size=10)
+        self.pub_img  = rospy.Publisher("/raw_camera_data", Int16MultiArray, queue_size=10)
+        self.pub_sens = rospy.Publisher("/SensorsScan", Float32MultiArray, queue_size=10)
+
+        self.lidar_scan.header.frame_id = "lidar_frame"
+        self.lidar_scan.angle_min = 0 # in radians
+        self.lidar_scan.angle_max = 2*np.pi # in radians
+        self.lidar_scan.angle_increment = 2*np.pi/360 # in radians (should be 1 degree)
+        self.lidar_scan.time_increment = self.lidar.getSamplingPeriod() # in seconds
+        self.lidar_scan.scan_time = self.lidar_scan.time_increment * 360 # in seconds
+        self.lidar_scan.range_min = 0.0
+        self.lidar_scan.range_max = 10000.0
     
 
     def apply_command(self, msg_cmd_vel) :
@@ -70,7 +80,7 @@ class RosController :
     def rescale_to_360(self, data) :
         """ Rescaling data from 800 to 360 points """
         # the lidar has 800 points, we want to rescale it to 360 points
-        num_degrees = 360
+        """ num_degrees = 360
         num_bin = 800
         bin_size = num_bin / num_degrees
 
@@ -83,16 +93,21 @@ class RosController :
             bin_index = int(i / bin_size)
             
             # Calculate the average distance for the bin
-            resampled_data[i] = np.mean(data[bin_index])
+            distance = data[bin_index]
+            resampled_data[i] = distance if (distance not in [np.nan, np.inf]) else 0. """
 
-        return resampled_data
+        return data[:360]
 
     def publish_scan(self, event) :
         try : 
             self.lidar.enable(self.time_step)
-            self.lidar_scan.data = self.lidar.getRangeImage()
-            self.lidar_scan.data = self.rescale_to_360(self.lidar_scan.data)
+
+
+            self.lidar_scan.header.stamp = rospy.Time.now()
+
+            self.lidar_scan.ranges = self.lidar.getRangeImage()[:360]
             self.pub_scan.publish(self.lidar_scan)
+
             self.lidar.disable()
         except Exception as e :
             print("Error while publishing scan", e)

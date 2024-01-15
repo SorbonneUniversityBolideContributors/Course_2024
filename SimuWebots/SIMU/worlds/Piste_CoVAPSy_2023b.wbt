@@ -4,6 +4,7 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
 EXTERNPROTO "../protos/MyRobot.proto"
 EXTERNPROTO "../protos/Bot.proto"
+EXTERNPROTO "../protos/TT02_2023b.proto"
 
 WorldInfo {
 }
@@ -2237,7 +2238,10 @@ Bot {
   name "bot_orange"
   color 0.960784 0.47451 0
 }
-MyRobot {
+
+TT02_2023b {
   translation -2 -3 0.04
-  rotation -3.98559995427562e-12 -1 -1.900729159086915e-11 0.0016242695878270243
+  name "TT02_bleue_C"
+  controller "controller_jaune_ROS"
+  color 0.2 0.2 1
 }
