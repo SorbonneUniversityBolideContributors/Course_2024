@@ -8,7 +8,8 @@ from controller import Lidar
 import matplotlib.pyplot as plt
 import numpy as np
 import rospy
-from sensor_msgs.msg import LaserScan, Bool
+from sensor_msgs.msg import LaserScan
+from std_msgs.msg import Bool
 from control_bolide.msg import SpeedDirection
 
 
@@ -45,7 +46,7 @@ class YellowController():
 
         self.lidarScan.ranges = [0.] * 360
 
-        self.get_max_params():
+        self.get_max_params()
         # Speed
         self.speed = 0
 
