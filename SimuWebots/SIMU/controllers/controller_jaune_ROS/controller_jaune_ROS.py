@@ -8,7 +8,7 @@ from controller import Lidar
 import matplotlib.pyplot as plt
 import numpy as np
 import rospy
-from sensor_msgs.msg import LaserScan
+from sensor_msgs.msg import LaserScan, Bool
 from control_bolide.msg import SpeedDirection
 
 
@@ -20,6 +20,7 @@ class YellowController():
         self.driver = driver
 
         self.pub_scan = rospy.Publisher("/yellow_bot/raw_lidar_data", LaserScan, queue_size=10)
+        self.sub_param = rospy.Subscriber("/param_change_alert", Bool, self.get_max_params)
 
         self.sub_cmd_vel = rospy.Subscriber("cmd_vel", SpeedDirection, self.cmd_vel_callback)
 
@@ -44,17 +45,18 @@ class YellowController():
 
         self.lidarScan.ranges = [0.] * 360
 
+        self.get_max_params():
         # Speed
-        self.maxSpeed = 28/3.6 # m/s
         self.speed = 0
 
         # Steering
-        self.maxSteeringAngle = 35 * np.pi/180 # rad
         self.steeringAngle = 0
-
 
         self.setCommand()
 
+    def get_max_params(self, value = True) :
+        self.maxSpeed = rospy.get_param('/simulation_max_speed', default = 28) / 3.6
+        self.maxSteeringAngle = rospy.get_param('/simulation_max_angle', default = 25) * np.pi/180
 
 
     def command_to_units(self, speed, steeringAngle):
