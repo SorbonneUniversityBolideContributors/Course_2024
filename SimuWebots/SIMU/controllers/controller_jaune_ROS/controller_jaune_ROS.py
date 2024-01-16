@@ -47,6 +47,9 @@ class YellowController():
         self.lidarScan.ranges = [0.] * 360
 
         self.get_max_params()
+
+        print("maxSpeed: ", self.maxSpeed, "maxSteeringAngle: ", self.maxSteeringAngle)
+
         # Speed
         self.speed = 0
 
@@ -57,12 +60,13 @@ class YellowController():
 
     def get_max_params(self, value = True) :
         self.maxSpeed = rospy.get_param('/simulation_max_speed', default = 28) / 3.6
-        self.maxSteeringAngle = rospy.get_param('/simulation_max_angle', default = 25) * np.pi/180
+        self.maxSteeringAngle = rospy.get_param('/simulation_max_angle', default = 20) * np.pi/180
 
 
     def command_to_units(self, speed, steeringAngle):
         speed = speed * self.maxSpeed
         steeringAngle = steeringAngle * self.maxSteeringAngle
+        print("speed: ", speed, "steeringAngle: ", steeringAngle)
         return speed, steeringAngle
     
     def applyCommand(self):
