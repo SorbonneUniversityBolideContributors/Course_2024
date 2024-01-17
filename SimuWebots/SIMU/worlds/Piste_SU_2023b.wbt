@@ -2,6 +2,7 @@
 
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/Pavement.proto"
 EXTERNPROTO "../protos/MyRobot.proto"
 EXTERNPROTO "../protos/Bot.proto"
 EXTERNPROTO "../protos/TT02_2023b_SU.proto"
@@ -2212,12 +2213,18 @@ Group {
 }
 Solid {
   translation 0 0.5 -0.05
+  pavementAppearance Pavement {
+    colorOverride 0.45098 0.823529 0.0862745
+  }
   children [
     Shape {
       appearance PBRAppearance {
+        baseColor 0.5 0.45 0.42
+        metalness 0.5
+        roughness 0.5
       }
       geometry Box {
-        size 10 10 0.1
+        size 20 20 0.1
       }
     }
   ]

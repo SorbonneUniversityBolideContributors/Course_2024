@@ -69,11 +69,11 @@ PROTO TT02_2023b_SU [
         zAxis TRUE
       }
       Camera {
-      	translation 0.14 0 0.04
-      	rotation 0.0 0.0 0.0 0.1963
+      	translation 0.30 0 0.04
+      	rotation 0.0 0.0 0.0 0.0
         name "TT02_camera"
-      	width 640
-      	height 480
+      	width 160
+      	height 128
 			}
       Lidar {
         translation 0.2 0 0.079

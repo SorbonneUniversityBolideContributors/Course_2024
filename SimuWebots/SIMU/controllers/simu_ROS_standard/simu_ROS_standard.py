@@ -5,8 +5,9 @@ __date__ = "2023-01"
 
 from vehicle import Driver
 
-from node_controller import SimuController
-from node_lidar_publisher import SimuLidarPublisher
+from simu_controller import SimuController
+from simu_lidar_publisher import SimuLidarPublisher
+from simu_camera_publisher import SimuCameraPublisher
 
 import rospy
 
@@ -19,11 +20,16 @@ rospy.init_node(my_bot_name + '_node', anonymous=True)
 my_driver = Driver()
 my_controller = SimuController(my_driver, my_bot_name)
 my_lidar_publisher = SimuLidarPublisher(my_driver, my_bot_name)
+my_camera_publisher = SimuCameraPublisher(my_driver, my_bot_name)
 
 
-TIME_SIMU = 1.0/12.0
-rospy.Timer(rospy.Duration(TIME_SIMU), my_lidar_publisher.publish_lidar_data)
-rospy.loginfo("Controller initialized, publishing raw lidar data")
+F_LIDAR = 12
+rospy.Timer(rospy.Duration(1 / F_LIDAR), my_lidar_publisher.publish_lidar_data)
+
+F_CAMERA = 30
+rospy.Timer(rospy.Duration(1 / F_CAMERA), my_camera_publisher.publish_camera_data)
+
+rospy.loginfo("Controller initialized, publishing raw lidar data and raw camera data.")
 
 rate = rospy.Rate(30)
 while not rospy.is_shutdown():
