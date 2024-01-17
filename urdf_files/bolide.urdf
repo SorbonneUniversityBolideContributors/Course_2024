@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<robot name="bolide.urdf" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="base_link">
+    <visual>
+      <origin xyz="0.119 0 0.04" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.44 0.195 0.131"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.119 0 0.04" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.44 0.195 0.131"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="RpLidarA2">
+    <visual>
+      <origin xyz="0 0 -0.011" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.038" length="0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.011" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.038" length="0.04"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_link_RpLidarA2_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="RpLidarA2"/>
+    <origin xyz="0.2 0 0.079" rpy="0 0 0"/>
+  </joint>
+  <link name="solid">
+  </link>
+  <joint name="RpLidarA2_solid_joint" type="fixed">
+    <parent link="RpLidarA2"/>
+    <child link="solid"/>
+    <origin xyz="0 0 -0.0314" rpy="0 0 -1.960354"/>
+  </joint>
+  <link name="TT02_camera">
+  </link>
+  <joint name="base_link_TT02_camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="TT02_camera"/>
+    <origin xyz="0.14 0 0.04" rpy="-1.570796 0 -1.374496"/>
+  </joint>
+  <link name="TT02_accelerometer">
+  </link>
+  <joint name="base_link_TT02_accelerometer_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="TT02_accelerometer"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="TT02_speaker">
+  </link>
+  <joint name="base_link_TT02_speaker_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="TT02_speaker"/>
+    <origin xyz="0.257 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="emitter">
+  </link>
+  <joint name="base_link_emitter_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="emitter"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="engine_speaker">
+  </link>
+  <joint name="base_link_engine_speaker_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="engine_speaker"/>
+    <origin xyz="0.257 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="right_rear_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="rear right wheel"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1e+08" velocity="900"/>
+    <origin xyz="0 -0.075 0" rpy="0 0 0"/>
+  </joint>
+  <link name="rear right wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.570796 0 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.035"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.570796 0 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.035"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="slot_rear right wheel_joint" type="fixed">
+    <parent link="slot"/>
+    <child link="rear right wheel"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="left_rear_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="rear left wheel"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="1e+08" velocity="900"/>
+    <origin xyz="0 0.075 0" rpy="0 0 3.14159"/>
+  </joint>
+  <link name="rear left wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.570796 0 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.035"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.570796 0 0"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.035"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="slot_0_rear left wheel_joint" type="fixed">
+    <parent link="slot_0"/>
+    <child link="rear left wheel"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+</robot>
