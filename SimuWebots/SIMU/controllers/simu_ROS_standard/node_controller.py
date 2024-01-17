@@ -32,10 +32,8 @@ class SimuController():
         self.maxSpeed = rospy.get_param('/simulation_max_speed', default = 28) / 3.6
         self.maxSteeringAngle = rospy.get_param('/simulation_max_angle', default = 20) * np.pi/180
 
-        print("maxSpeed: " + str(self.maxSpeed) + " maxSteeringAngle: " + str(self.maxSteeringAngle))
-
     def cmd_vel_callback(self, msg:SpeedDirection):
-        """Callback for the /cmd_vel topic"""
+        """Callback for the cmd_vel topic"""
         self.set_command(msg.speed, msg.direction)
 
     def set_command(self, msg:SpeedDirection):

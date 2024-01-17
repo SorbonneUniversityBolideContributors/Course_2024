@@ -33,8 +33,8 @@ PROTO TT02_2023b [
     trackFront                     0.15
     trackRear                      0.15
     wheelbase                      0.257
-    minSteeringAngle               -0.35
-    maxSteeringAngle               0.35
+    minSteeringAngle               -0.40
+    maxSteeringAngle               0.40
     suspensionFrontSpringConstant  100000
     suspensionFrontDampingConstant 4000
     suspensionRearSpringConstant   100000
