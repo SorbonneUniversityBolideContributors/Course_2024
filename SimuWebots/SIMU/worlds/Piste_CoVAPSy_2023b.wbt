@@ -2242,6 +2242,6 @@ Bot {
 TT02_2023b {
   translation -2 -3 0.04
   name "TT02_bleue_C"
-  controller "controller_jaune_ROS"
+  controller "simu_ROS_standard"
   color 0.2 0.2 1
 }
