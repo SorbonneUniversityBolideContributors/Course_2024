@@ -35,12 +35,19 @@ export ROS_HOSTNAME=localhost  # localhost | bolide2
 export BOLIDE2_IP=192.168.79.205
 export BOLIDE1_IP="TODO"
 
-# get the ip of the current machine
+# get the ip of the current machine
 export MY_IP=$(hostname -I | cut -d' ' -f1)
 
 alias bolide2_env="export ROS_MASTER_URI=http://$BOLIDE2_IP:11311 && export ROS_NAMESPACE=bolide2"
 alias bolide1_env="export ROS_MASTER_URI=http://$BOLIDE1_IP:11311 && export ROS_NAMESPACE=bolide1"
-alias local_env="export ROS_MASTER_URI=http://localhost:11311 && export ROS_NAMESPACE="
+alias local_env="export ROS_MASTER_URI=http://localhost:11311 && unset ROS_NAMESPACE"
+
+# if namespace is bolide1 or bolide2, set ROS_IP to the IP of this machine else set to localhost
+export ROS_IP=$(if [ "$ROS_NAMESPACE" = "bolide1" ] || [ "$ROS_NAMESPACE" = "bolide2" ]; then echo $MY_IP; else echo localhost; fi)
+export ROS_HOSTNAME=$ROS_IP
+
+alias bolide2_ssh="ssh bolide2@$BOLIDE2_IP"
+alias bolide1_ssh="ssh bolide1@$BOLIDE1_IP"
 
 alias yellow_bot_env="export ROS_MASTER_URI=http://localhost:11311 && export ROS_NAMESPACE=yellow_bot"
 
