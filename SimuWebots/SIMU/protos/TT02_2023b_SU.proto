@@ -59,8 +59,8 @@ PROTO TT02_2023b_SU [
       Emitter {
       }
       Speaker {
-        translation 0.257 0 0
         name "TT02_speaker"
+        translation 0.257 0 0
       }
       Accelerometer {
         name "TT02_accelerometer"
@@ -75,13 +75,17 @@ PROTO TT02_2023b_SU [
         zAxis TRUE
       }
       Camera {
+        name "TT02_camera"
       	translation 0.30 0 0.04
       	rotation 0.0 0.0 0.0 0.0
-        name "TT02_camera"
       	width 160
       	height 128
 			}
+      DistanceSensor {
+        name "TT02_IR_left"
+      }
       Lidar {
+        name "RpLidarA2"
         translation 0.2 0 0.079
         children [
           Pose {
@@ -148,7 +152,6 @@ PROTO TT02_2023b_SU [
             ]
           }
         ]
-        name "RpLidarA2"
         boundingObject Pose {
           translation 0 0 -0.011
           children [
