@@ -20,6 +20,18 @@ Check the `Robot_setup.md` file to get started with the robot.
 ## Aliases
 
 ```bash
+
+# ROS aliases
+alias eb='nano ~/.bashrc'
+alias sb='source ~/.bashrc'
+alias cm='cd ~/catkin_ws && catkin_make'
+alias cw='cd ~/catkin_ws'
+alias cs='cd ~/catkin_ws/src'
+
+export ROS_MASTER_URI=http://localhost:11311  # http://localhost:11311 | http://192.168.79.205:11311
+export ROS_NAMESPACE=
+export ROS_HOSTNAME=localhost  # localhost | bolide2
+
 export BOLIDE2_IP=192.168.79.205
 export BOLIDE1_IP="TODO"
 
