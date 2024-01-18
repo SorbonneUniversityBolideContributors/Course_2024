@@ -17,6 +17,12 @@ https://ajuton-ens.github.io/CourseVoituresAutonomesSaclay/
 
 Check the `Robot_setup.md` file to get started with the robot.
 
+Here are the credentials for the rooter at St-Cyr
+SSID: R15-AF66
+mdp: eprtu89734
+
+IP bolide2: 192.168.137.78
+
 ## Aliases
 
 ```bash
