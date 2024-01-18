@@ -4,7 +4,7 @@
 ## Project Overview
 This is a project made by Sorbonne University students. The goal is to make an autonomous RC car that can drive on a track and avoid obstacles for the ENS 2024 race.
 
-The project is divided into three main parts:
+The project is divided into three main packages:
 1. **Perception:** [perception_bolide](https://github.com/Pfecourse/perception_bolide)
 2. **Planning:** [planning_bolide](https://github.com/Pfecourse/planning_bolide)
 3. **Control:** [control_bolide](https://github.com/Pfecourse/control_bolide)
@@ -29,6 +29,7 @@ IP bolide2: 192.168.137.78
 
 source /opt/ros/noetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
+
 # ROS aliases
 alias eb='nano ~/.bashrc'
 alias sb='source ~/.bashrc'
