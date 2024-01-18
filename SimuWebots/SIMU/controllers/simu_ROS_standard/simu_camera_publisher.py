@@ -63,8 +63,8 @@ class SimuCameraPublisher():
 
 
     def publish_camera_data(self, *args):
-        """Publishes the lidar data in the publisher topic"""
-        # lidar
+        """Publishes the camera data in the publisher topic"""
+        # camera
         self.imageFrame.data = self.camera.getImage()
         self.imageFrame.header.stamp = rospy.Time.now()
         self.pub_img.publish(self.imageFrame)

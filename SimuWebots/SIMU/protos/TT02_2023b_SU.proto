@@ -68,6 +68,12 @@ PROTO TT02_2023b_SU [
         yAxis TRUE
         zAxis TRUE
       }
+      Gyro {
+        name "TT02_gyro"
+        xAxis TRUE
+        yAxis TRUE
+        zAxis TRUE
+      }
       Camera {
       	translation 0.30 0 0.04
       	rotation 0.0 0.0 0.0 0.0
