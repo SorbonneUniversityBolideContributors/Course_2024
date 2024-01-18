@@ -69,7 +69,7 @@ class SimuLidarPublisher():
             
             # Calculate the average distance for the bin
             distance = lidar_data[bin_index]
-            resampled_data[i] = distance if (distance not in [np.nan, np.inf]) else 0.
+            resampled_data[num_degrees - 1 - i] = distance if (distance not in [np.nan, np.inf]) else 0.
         
         return resampled_data
 
