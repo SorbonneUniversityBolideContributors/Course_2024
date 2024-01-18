@@ -27,6 +27,8 @@ IP bolide2: 192.168.137.78
 
 ```bash
 
+source /opt/ros/noetic/setup.bash
+source ~/catkin_ws/devel/setup.bash
 # ROS aliases
 alias eb='nano ~/.bashrc'
 alias sb='source ~/.bashrc'
@@ -38,7 +40,7 @@ export ROS_MASTER_URI=http://localhost:11311  # http://localhost:11311 | http://
 export ROS_NAMESPACE=
 export ROS_HOSTNAME=localhost  # localhost | bolide2
 
-export BOLIDE2_IP=192.168.79.205
+export BOLIDE2_IP=192.168.137.78
 export BOLIDE1_IP="TODO"
 
 # get the ip of the current machine
