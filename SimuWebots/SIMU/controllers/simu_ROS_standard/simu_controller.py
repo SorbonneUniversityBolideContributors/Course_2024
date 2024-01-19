@@ -41,7 +41,12 @@ class SimuController():
         speed_command = msg.speed
         steeringAngle_command = msg.direction
         # make sure the commands are between -1 and 1
-        assert speed_command >= -1 and speed_command <= 1, "Speed command must be between -1 and 1"
+        
+        # set the breaks if the speed command is 2
+        if speed_command == 2:
+            speed_command = 0
+
+        assert speed_command >= -1 and speed_command <= 1, "Speed command must be between -1 and 1 (or 2 for breaks)"
         assert steeringAngle_command >= -1 and steeringAngle_command <= 1, "Steering angle command must be between -1 and 1"
         
         # apply the commands

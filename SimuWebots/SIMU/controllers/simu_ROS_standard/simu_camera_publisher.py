@@ -59,9 +59,6 @@ class SimuCameraPublisher():
         self.imageFrame.step = 3 * CAMERA_WIDTH # This is the full row length in bytes. It's 3 times the width because each pixel has three color channels (RGB).
         
 
-        self.imageFrame.data = [0] * (3 * CAMERA_WIDTH * CAMERA_HEIGHT)
-
-
     def publish_camera_data(self, *args):
         """Publishes the camera data in the publisher topic"""
         # camera
