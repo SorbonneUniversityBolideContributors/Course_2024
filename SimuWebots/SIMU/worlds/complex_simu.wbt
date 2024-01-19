@@ -97,7 +97,7 @@ StraightRoadSegment {
   lines [
     RoadLine {
       type "continuous"
-      width 0.02
+      width 0.0227
     }
   ]
   startingRoadBorderWidth 0.1

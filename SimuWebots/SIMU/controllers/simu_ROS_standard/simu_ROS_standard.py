@@ -8,6 +8,7 @@ from simu_controller import SimuController
 from simu_lidar_publisher import SimuLidarPublisher
 from simu_camera_publisher import SimuCameraPublisher
 from simu_imu_publisher import SimuImuPublisher
+from simu_rear_ranges_publisher import SimuRearRangesPublisher
 
 import rospy
 
@@ -21,6 +22,8 @@ my_controller = SimuController(my_driver, my_bot_name)
 my_lidar_publisher = SimuLidarPublisher(my_driver, my_bot_name)
 my_camera_publisher = SimuCameraPublisher(my_driver, my_bot_name)
 my_imu_publisher = SimuImuPublisher(my_driver, my_bot_name)
+my_rear_ranges_publisher = SimuRearRangesPublisher(my_driver, my_bot_name)
+
 
 
 #%% TIMERS ===============================================================================
@@ -32,6 +35,10 @@ rospy.Timer(rospy.Duration(1 / F_CAMERA), my_camera_publisher.publish_camera_dat
 
 F_IMU = 12
 rospy.Timer(rospy.Duration(1 / F_IMU), my_imu_publisher.publish_imu_data)
+
+F_REAR_RANGES = 12
+rospy.Timer(rospy.Duration(1 / F_REAR_RANGES), my_rear_ranges_publisher.publish_rear_range_data)
+
 
 rospy.loginfo("Controller initialized, now publishing data...")
 

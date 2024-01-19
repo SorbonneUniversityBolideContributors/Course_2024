@@ -82,7 +82,73 @@ PROTO TT02_2023b_SU [
       	height 128
 			}
       DistanceSensor {
-        name "TT02_IR_left"
+        name "TT02_IR_rear_left"
+        translation -0.085 0.065 0.01
+      	rotation 0 0 1 3.0116
+        lookupTable [ 0.00 0.00 0.00,
+                      0.05 0.05 0.010,
+                      0.10 0.10 0.005,
+                      0.12 0.12 0.003,
+                      0.15 0.15 0.002,
+                      0.20 0.20 0.004,
+                      0.25 0.25 0.006,
+                      0.30 0.30 0.009,
+                      0.34 0.34 0.015 ]
+        type "infra-red"
+        children [
+          DEF RANGESENSOR Transform {
+            rotation 0.577197 0.577197 -0.577197 -2.093935
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.2 0.2 0.2
+                  metalness 0
+                  roughness 0.3
+                }
+                geometry Cylinder {
+                  height 0.002
+                  radius 0.0035
+                }
+              }
+            ]
+          }
+        ]
+      }
+      DistanceSensor {
+        name "TT02_IR_rear_right"
+        translation -0.085 -0.065 0.01
+      	rotation 0 0 1 3.2716
+        lookupTable [ 0.00 0.00 0.00,
+                      0.05 0.05 0.10,
+                      0.10 0.10 0.05,
+                      0.12 0.12 0.03,
+                      0.15 0.15 0.02,
+                      0.20 0.20 0.04,
+                      0.25 0.25 0.06,
+                      0.30 0.30 0.09,
+                      0.34 0.34 0.15 ]
+        type "infra-red"
+        children [
+          USE RANGESENSOR
+        ]
+      }
+      DistanceSensor {
+        name "TT02_sonar_rear"
+        translation -0.085 0 0.01
+      	rotation 0 0 1 3.1416
+        lookupTable [ 0.00 0.00 0.00,
+                      0.05 0.05 0.10,
+                      0.10 0.10 0.05,
+                      0.12 0.12 0.03,
+                      0.15 0.15 0.02,
+                      0.20 0.20 0.04,
+                      0.25 0.25 0.06,
+                      0.30 0.30 0.09,
+                      0.34 0.34 0.15 ]
+        type "sonar"
+        children [
+          USE RANGESENSOR
+        ]
       }
       Lidar {
         name "RpLidarA2"

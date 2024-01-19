@@ -2,13 +2,14 @@
 
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/WoodenBox.proto"
 EXTERNPROTO "../protos/TT02_2023b_SU.proto"
 
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.138655 0.978807 -0.2098 1.19072
-  position -5.3106 -6.35494 16.3647
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
+  position 5.01946586742962 -7.281815517772996 14.18306654543654
   followType "Mounted Shot"
 }
 TexturedBackground {
@@ -2937,8 +2938,15 @@ Solid {
   }
 }
 TT02_2023b_SU {
-  translation 1.54 -5.71 0.04
+  translation 1.539996223499101 -5.710000000000493 0.0393539112560109
+  rotation -7.220880558835308e-08 -0.9999999999999973 2.8501655295989204e-09 9.587333172481078e-05
   name "TT02_violet"
   controller "simu_ROS_standard"
-  color 0.588 0.035 0.580
+  color 0.588 0.035 0.58
+}
+WoodenBox {
+  translation 5 1.5 0.146076898211959
+  rotation 0.06339729635525808 0.13255798328830493 0.9891456737414268 2.630091579783722e-16
+  size 0.3 0.3 0.3
+  mass 10
 }
