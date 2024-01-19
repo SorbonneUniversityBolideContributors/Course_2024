@@ -21,7 +21,9 @@ Here are the credentials for the rooter at St-Cyr
 SSID: R15-AF66
 mdp: eprtu89734
 
+Bolide's IP when connected to the rooter (SSID=R15-AF66) at St-Cyr
 IP bolide2: 192.168.137.78
+IP bolide1: 192.168.137.165
 
 ## Aliases
 
@@ -42,7 +44,7 @@ export ROS_NAMESPACE=
 export ROS_HOSTNAME=localhost  # localhost | bolide2
 
 export BOLIDE2_IP=192.168.137.78
-export BOLIDE1_IP="TODO"
+export BOLIDE1_IP=192.168.137.165
 
 # get the ip of the current machine
 export MY_IP=$(hostname -I | cut -d' ' -f1)
