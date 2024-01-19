@@ -39,30 +39,28 @@ alias cm='cd ~/catkin_ws && catkin_make'
 alias cw='cd ~/catkin_ws'
 alias cs='cd ~/catkin_ws/src'
 
-export ROS_MASTER_URI=http://localhost:11311  # http://localhost:11311 | http://192.168.79.205:11311
-export ROS_NAMESPACE=
-export ROS_HOSTNAME=localhost  # localhost | bolide2
-
-export BOLIDE2_IP=192.168.137.78
 export BOLIDE1_IP=192.168.137.165
+export BOLIDE2_IP=192.168.137.78
 
 # get the ip of the current machine
 export MY_IP=$(hostname -I | cut -d' ' -f1)
 
-alias bolide2_env="export ROS_MASTER_URI=http://$BOLIDE2_IP:11311 && export ROS_NAMESPACE=bolide2"
+# envs
 alias bolide1_env="export ROS_MASTER_URI=http://$BOLIDE1_IP:11311 && export ROS_NAMESPACE=bolide1"
+alias bolide2_env="export ROS_MASTER_URI=http://$BOLIDE2_IP:11311 && export ROS_NAMESPACE=bolide2"
 alias local_env="export ROS_MASTER_URI=http://localhost:11311 && unset ROS_NAMESPACE"
+
+# namespaces
+alias bolide1_namespace="export ROS_NAMESPACE=bolide1" # when working with .bag file
+alias bolide2_namespace="export ROS_NAMESPACE=bolide2" # when working with .bag file
+alias simu_bot_namespace="export ROS_NAMESPACE=simu_bot"
 
 # if namespace is bolide1 or bolide2, set ROS_IP to the IP of this machine else set to localhost
 export ROS_IP=$(if [ "$ROS_NAMESPACE" = "bolide1" ] || [ "$ROS_NAMESPACE" = "bolide2" ]; then echo $MY_IP; else echo localhost; fi)
 export ROS_HOSTNAME=$ROS_IP
 
-alias bolide2_ssh="ssh bolide2@$BOLIDE2_IP"
 alias bolide1_ssh="ssh bolide1@$BOLIDE1_IP"
-
-alias yellow_bot_env="export ROS_MASTER_URI=http://localhost:11311 && export ROS_NAMESPACE=yellow_bot"
-
-alias simu_bot_env="export ROS_MASTER_URI=http://localhost:11311 && export ROS_NAMESPACE=simu_bot"
+alias bolide2_ssh="ssh bolide2@$BOLIDE2_IP"
 
 # pull all the ros packages
 alias giga_git_pull="cd ~/catkin_ws/src/perception_bolide && git pull && cd ~/catkin_ws/src/planning_bolide && git pull && cd ~/catkin_ws/src/control_bolide && git pull && cd ~/Course_2024 && git pull && cd"
