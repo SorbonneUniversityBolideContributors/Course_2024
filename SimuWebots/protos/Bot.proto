@@ -1,0 +1,221 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/abstract/Car.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/saeon/protos/AltinoBodyMesh.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/saeon/protos/AltinoWheel.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/devices/slamtec/protos/RpLidarA2.proto"
+
+PROTO Bot [
+  field SFVec3f    translation     0 0 0.072               # Is `Transform.translation`.
+  field SFRotation rotation        0 0 1 0                 # Is `Transform.rotation`.
+  field SFString   name           "Robot"                  # Is `Solid.name`.
+  field SFString   controller      "ackerman_controller_bot"   # Is `Robot.controller`.
+  field MFString   controllerArgs  []                      # Is `Robot.controllerArgs`.
+  field SFString   window          "<generic>"             # Is `Robot.window`.
+  field SFBool     synchronization TRUE                    # Is `Robot.synchronization`.
+  field SFColor    color           0.0 0.0 1.0           # Is `Material.diffuseColor`.
+]
+{
+  Car {
+    translation IS translation
+    rotation IS rotation
+    name IS name
+    model "MyRobot"
+    controller IS controller
+    controllerArgs IS controllerArgs
+    window IS window
+    synchronization IS synchronization
+    trackFront                     0.08
+    trackRear                      0.08
+    wheelbase                      0.1
+    minSteeringAngle               -0.5
+    maxSteeringAngle               0.5
+    suspensionFrontSpringConstant  100000
+    suspensionFrontDampingConstant 4000
+    suspensionRearSpringConstant   100000
+    suspensionRearDampingConstant  4000
+    wheelsDampingConstant          5
+    extensionSlot [
+      
+      Accelerometer {
+        name "accelerometer"
+        xAxis TRUE
+        yAxis TRUE
+        zAxis TRUE
+      }
+      Emitter {
+        type "radio"
+      }
+      Receiver {
+        type "radio"
+      }
+    	
+    	DistanceSensor {
+        translation 0.14 0.035 0.0
+        rotation 0 0 1 0.7854
+        children [
+          DEF SONAR Transform {
+            rotation 0.577657 0.577197 -0.577197 -2.093935
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 1 0.0517103
+                  metalness 0
+                  roughness 0.3
+                }
+                geometry Cylinder {
+                  height 0.002
+                  radius 0.0075
+                }
+              }
+            ]
+          }
+        ]
+        name "ds_left"
+        lookupTable [
+          0 0 0.1 0.1 0.1 0.01 0.2 0.2 0.001 1.0 1.0 0.0001 2.0 2.0 0.0001 10.0 10.0 0.00001 11.0 0.0 0.0001
+        ]
+        type "infra-red"
+      }
+      
+      DistanceSensor {
+        translation 0.14 -0.035 0.0
+        rotation 0 0 1 -0.7854
+        children [
+          USE SONAR
+        ]
+        name "ds_right"
+        lookupTable [
+          0 0 0.1 0.1 0.1 0.01 0.2 0.2 0.001 1.0 1.0 0.0001 2.0 2.0 0.0001 10.0 10.0 0.00001 11.0 0.0 0.0001
+        ]
+        type "infra-red"
+      }
+      
+      DistanceSensor {
+        translation 0.12 -0.05 0.0
+        rotation 0 0 1 -1.04719
+        children [
+          USE SONAR
+        ]
+        name "ds_max_right"
+        lookupTable [
+          0 0 0.1 0.1 0.1 0.01 0.2 0.2 0.001 1.0 1.0 0.0001 2.0 2.0 0.0001 10.0 10.0 0.00001 11.0 0.0 0.0001
+        ]
+        type "infra-red"
+      }
+      
+      DistanceSensor {
+        translation 0.12 0.05 0.0
+        rotation 0 0 1 1.04719
+        children [
+          USE SONAR
+        ]
+        name "ds_max_left"
+        lookupTable [
+          0 0 0.1 0.1 0.1 0.01 0.2 0.2 0.001 1.0 1.0 0.0001 2.0 2.0 0.0001 10.0 10.0 0.00001 11.0 0.0 0.0001
+        ]
+        type "infra-red"
+      }
+      
+      DistanceSensor {
+        translation 0.15 0.02 0.0
+        rotation 0 0 1 0.3927
+        children [
+          USE SONAR
+        ]
+        name "ds_center_left"
+        lookupTable [
+          0 0 0.1 0.1 0.1 0.01 0.2 0.2 0.001 1.0 1.0 0.0001 2.0 2.0 0.0001 10.0 10.0 0.00001 11.0 0.0 0.0001
+        ]
+        type "infra-red"
+      }
+      
+      DistanceSensor {
+        translation 0.15 -0.02 0.0
+        rotation 0 0 1 -0.3927
+        children [
+          USE SONAR
+        ]
+        name "ds_center_right"
+        lookupTable [
+          0 0 0.1 0.1 0.1 0.01 0.2 0.2 0.001 1.0 1.0 0.0001 2.0 2.0 0.0001 10.0 10.0 0.00001 11.0 0.0 0.0001
+        ]
+        type "infra-red"
+      }
+      
+      DistanceSensor {
+        translation 0.15 0.0 0.0
+        rotation 0 0 1 0.0
+        children [
+          USE SONAR
+        ]
+        name "ds_center"
+        lookupTable [
+          0 0 0.1 0.1 0.1 0.01 0.2 0.2 0.001 1.0 1.0 0.0001 2.0 2.0 0.0001 10.0 10.0 0.00001 11.0 0.0 0.0001
+        ]
+        type "infra-red"
+      }
+      
+
+      Transform {
+        translation 0.071 0 0.024
+        rotation -0.57735 0.57735 0.57735 -2.09439
+        children [
+          DEF ALTINO_BODY Shape {
+            appearance PBRAppearance {
+              baseColor IS color
+              roughness 0.2
+              metalness 0
+            }
+            geometry AltinoBodyMesh { }
+          }
+        ]
+      }
+    ]
+    boundingObject Group {
+      children [
+        Transform {
+          translation 0.03 0 0.017
+          children [
+            Box {
+              size 0.097 0.063 0.05
+            }
+          ]
+        }
+        Transform {
+          translation 0.052 0 0.015
+          children [
+            Box {
+              size 0.16 0.09 0.04
+            }
+          ]
+        }
+        Transform {
+          translation 0.052 0 0.015
+          children [
+            Box {
+              size 0.18 0.07 0.04
+            }
+          ]
+        }
+      ]
+    }
+    physics                 Physics { density -1 mass 5 }
+    radarCrossSection       100
+    wheelFrontRight         AltinoWheel { name "front right wheel" }
+    wheelFrontLeft          AltinoWheel { name "front left wheel"}
+    wheelRearRight          AltinoWheel { name "rear right wheel"}
+    wheelRearLeft           AltinoWheel { name "rear left wheel"}
+    type                    "4x4"
+    engineType              "electric"
+    engineSound             ""
+    brakeCoefficient        700
+    time0To100              2
+    engineMaxTorque         0.5
+    engineMaxPower          10
+    engineMinRPM            1
+    engineMaxRPM            550
+    gearRatio               [-60 60]
+    maxVelocity             2.0
+  }
+}

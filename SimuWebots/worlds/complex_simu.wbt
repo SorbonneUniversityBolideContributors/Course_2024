@@ -1,0 +1,379 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/road/protos/StraightRoadSegment.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/road/protos/RoadLine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/road/protos/CurvedRoadSegment.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/Pavement.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "../protos/MyRobot.proto"
+EXTERNPROTO "../protos/Bot.proto"
+
+WorldInfo {
+  title "simu_v4"
+}
+Viewpoint {
+  orientation -0.02104486980169177 0.9997639539459199 0.005399059682057857 0.47563524166507215
+  position -7.424247392094422 -0.5186849392319739 3.895247796959506
+}
+TexturedBackground {
+  luminosity 5
+  skybox FALSE
+}
+TexturedBackgroundLight {
+  luminosity 1.5
+}
+StraightRoadSegment {
+  translation -2 -2.5 0
+  name "road_line1"
+  id "road_line1"
+  width 1
+  lines [
+    RoadLine {
+      type "continuous"
+      width 0.02
+    }
+  ]
+  startingRoadBorderWidth 0.1
+  endingRoadBorderWidth 0.1
+  leftBorder FALSE
+  length 5
+  pavementAppearance Pavement {
+    colorOverride 0.45098 0.823529 0.0862745
+  }
+  roadBoundingObject TRUE
+  rightBorderBoundingObject TRUE
+}
+StraightRoadSegment {
+  translation -2 1.5 0
+  name "road_line2"
+  id "road_line2"
+  width 1
+  lines [
+    RoadLine {
+      type "continuous"
+      width 0.02
+    }
+  ]
+  startingRoadBorderWidth 0.1
+  endingRoadBorderWidth 0.1
+  rightBorder FALSE
+  length 4
+  pavementAppearance Pavement {
+    colorOverride 0.45098 0.823529 0.0862745
+  }
+  roadBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+}
+StraightRoadSegment {
+  translation -2.5 -2 0
+  rotation 0 0 1 1.5707996938995747
+  name "road_line3"
+  id "road_line3"
+  width 1
+  lines [
+    RoadLine {
+      type "continuous"
+      width 0.02
+    }
+  ]
+  startingRoadBorderWidth 0.1
+  endingRoadBorderWidth 0.1
+  rightBorder FALSE
+  length 3
+  pavementAppearance Pavement {
+    colorOverride 0.45098 0.823529 0.0862745
+  }
+  roadBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+}
+StraightRoadSegment {
+  translation 2.5 -1 0
+  rotation 0 0 1 1.5707996938995747
+  name "road_line4"
+  id "road_line4"
+  width 1
+  lines [
+    RoadLine {
+      type "continuous"
+      width 0.0227
+    }
+  ]
+  startingRoadBorderWidth 0.1
+  endingRoadBorderWidth 0.1
+  leftBorder FALSE
+  length 2
+  pavementAppearance Pavement {
+    colorOverride 0.45098 0.823529 0.0862745
+  }
+  roadBoundingObject TRUE
+  rightBorderBoundingObject TRUE
+}
+CurvedRoadSegment {
+  translation 1.999 0.999 0
+  name "road_curve1"
+  id "road_curve1"
+  width 1
+  lines [
+    RoadLine {
+      type "continuous"
+      width 0.02
+    }
+  ]
+  roadBorderWidth [
+    0.1
+  ]
+  rightBorder FALSE
+  curvatureRadius 0.5
+  totalAngle 1.57
+  subdivision 2
+  pavementAppearance Pavement {
+    colorOverride 0.45098 0.823529 0.0862745
+  }
+  roadBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+  rightBarrierBoundingObject FALSE
+  leftBarrierBoundingObject FALSE
+}
+CurvedRoadSegment {
+  translation 3 -0.999 0
+  rotation 0 0 1 -3.14159
+  name "road_curve2_1"
+  id "road_curve2"
+  width 1
+  lines [
+    RoadLine {
+      type "continuous"
+      width 0.02
+    }
+  ]
+  roadBorderWidth [
+    0.1
+  ]
+  rightBorder FALSE
+  curvatureRadius 0.5
+  totalAngle 1.57
+  subdivision 2
+  pavementAppearance Pavement {
+    colorOverride 0.8 0 0
+  }
+  roadBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+}
+CurvedRoadSegment {
+  translation 3 -1.999 0
+  name "road_curve2_2"
+  id "road_curve2"
+  width 1
+  lines [
+    RoadLine {
+      type "continuous"
+      width 0.02
+    }
+  ]
+  roadBorderWidth [
+    0.1
+  ]
+  rightBorder FALSE
+  curvatureRadius 0.5
+  totalAngle 1.57
+  subdivision 2
+  pavementAppearance Pavement {
+    colorOverride 0.45098 0.823529 0.0862745
+  }
+  roadBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+}
+CurvedRoadSegment {
+  translation 3 -1.999 0
+  rotation 0 0 1 -1.570795
+  name "road_curve2_3"
+  id "road_curve2"
+  width 1
+  lines [
+    RoadLine {
+      type "continuous"
+      width 0.02
+    }
+  ]
+  roadBorderWidth [
+    0.1
+  ]
+  rightBorder FALSE
+  curvatureRadius 0.5
+  totalAngle 1.57
+  subdivision 2
+  pavementAppearance Pavement {
+    colorOverride 0.45098 0.823529 0.0862745
+  }
+  roadBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+}
+CurvedRoadSegment {
+  translation -1.999 -1.999 0
+  rotation 0 0 1 3.141592653589793
+  name "road_curve3"
+  id "road_curve3"
+  width 1
+  lines [
+    RoadLine {
+      type "continuous"
+      width 0.02
+    }
+  ]
+  roadBorderWidth [
+    0.1
+  ]
+  rightBorder FALSE
+  curvatureRadius 0.5
+  totalAngle 1.57
+  subdivision 2
+  pavementAppearance Pavement {
+    colorOverride 0.45098 0.823529 0.0862745
+  }
+  roadBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+}
+CurvedRoadSegment {
+  translation -1.999 0.999 0
+  rotation 0 0 1 1.5707903061004251
+  name "road_curve4"
+  id "road_curve4"
+  width 1
+  lines [
+    RoadLine {
+      type "continuous"
+      width 0.02
+    }
+  ]
+  roadBorderWidth [
+    0.1
+  ]
+  rightBorder FALSE
+  curvatureRadius 0.5
+  totalAngle 1.57
+  subdivision 2
+  pavementAppearance Pavement {
+    colorOverride 0.45098 0.823529 0.0862745
+  }
+  roadBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+}
+StraightRoadSegment {
+  translation -2 -0.5 0
+  name "center1"
+  width 2.8
+  lines [
+    RoadLine {
+      type "none"
+    }
+  ]
+  startingRoadBorderWidth 0.1
+  endingRoadBorderWidth 0.1
+  rightBorder FALSE
+  length 4
+  pavementAppearance Pavement {
+    colorOverride 0.8 0 0
+  }
+  leftBorderBoundingObject TRUE
+}
+StraightRoadSegment {
+  translation -2 -1.6 -0.01
+  name "center1_R"
+  width 0.7
+  lines [
+    RoadLine {
+      type "none"
+    }
+  ]
+  startingRoadBorderWidth 0.4
+  endingRoadBorderWidth 0.1
+  leftBorder FALSE
+  length 5
+  pavementAppearance Pavement {
+    colorOverride 0.8 0 0
+  }
+  rightBorderBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+}
+StraightRoadSegment {
+  translation -1.9 -2 0
+  rotation 0 0 1 1.5707996938995747
+  name "wall1"
+  width 0.001
+  lines [
+    RoadLine {
+      type "none"
+    }
+  ]
+  startingRoadBorderWidth 0.1
+  endingRoadBorderWidth 0.1
+  rightBorder FALSE
+  length 2.9
+  pavementAppearance Pavement {
+    colorOverride 0.8 0 0
+  }
+  leftBorderBoundingObject TRUE
+}
+StraightRoadSegment {
+  translation 1.9 0.9 0
+  rotation 0 0 1 -1.570795613280012
+  name "wall2"
+  width 0.001
+  lines [
+    RoadLine {
+      type "none"
+    }
+  ]
+  startingRoadBorderWidth 0.1
+  endingRoadBorderWidth 0.1
+  rightBorder FALSE
+  length 1.9
+  pavementAppearance Pavement {
+    colorOverride 0.8 0 0
+  }
+  leftBorderBoundingObject TRUE
+}
+WoodenBox {
+  translation 7.234184863471417e-17 1.5 0.04740226558014501
+  rotation -0.048694332104581566 -0.12173583026145283 0.9913673636202897 2.8016444495622437e-16
+  name "obstacle_small"
+  size 0.1 0.1 0.1
+  mass 10
+}
+WoodenBox {
+  translation -1.715 -2.49814 0.0474023
+  rotation 8.40399e-18 7.04635e-17 1 -0.523595307179586
+  name "obstacle_small_2"
+  size 0.1 0.1 0.1
+  mass 10
+}
+WoodenBox {
+  translation 1.69 1.36 0.09629105501010893
+  rotation 0.7720253725082223 0.08578059694536831 0.6297765583055923 3.9759633916059216e-17
+  name "obstacle_tall"
+  size 0.2 0.2 0.2
+  mass 10
+}
+WoodenBox {
+  translation 1.69 -2.71 0.0962911
+  rotation 0.7720253725082223 0.08578059694536831 0.6297765583055923 3.9759633916059216e-17
+  name "obstacle_tall_2"
+  size 0.2 0.2 0.2
+  mass 10
+}
+Bot {
+  translation 0.64 1.74 0.022
+  name "bot_blue"
+}
+Bot {
+  translation -0.86 -2.6 0.022
+  rotation 0 0 -1 -3.1415853071795863
+  name "bot_orange"
+  color 0.960784 0.47451 0
+}
+MyRobot {
+  translation -1.8300341119897667 1.5000000000000004 0.01875638128108431
+  rotation -3.98559995427562e-12 -1 -1.900729159086915e-11 0.0016242695878270243
+}

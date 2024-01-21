@@ -44,7 +44,7 @@ Pour lancer **webots**, il faut alors utiliser la commande :
 webots
 ```
 
-Depuis la fenêtre principale de WeBots, aller dans ```File``` puis ```Open World``` et sélectionner un des fichiers ```.wbt``` de [SIMU/worlds](SIMU/worlds/)
+Depuis la fenêtre principale de WeBots, aller dans ```File``` puis ```Open World``` et sélectionner un des fichiers ```.wbt``` de [worlds](worlds/)
  
 Pour lancer la simulation, il faut alors cliquer sur le **bouton play** en haut de la fenêtre de visualisation graphique (Pour vérifier si le simulateur est bien en route, un indicateur temporel est situé à gauche du bouton play. Si cet indicateur affiche un chronomètre, alors la simulation est bien en cours de fonctionnement.). Si besoin, la simulation peut être arrétée et relancée avec les boutons pause et restart, voisins au bouton play.
 
@@ -53,6 +53,6 @@ Le simulateur est implémenté de sorte que le robot simulé soit le plus proche
 
 ## Contenu de SIMU
 
-- [controllers](SIMU/controllers/) : Ce dossier contient les codes pythons excécutés par webots lors de l'aparition d'un véhicule employant le controleur cité.
-- [protos](SIMU/protos/)
-- [worlds](SIMU/worlds/)
+- [controllers](controllers/) : Ce dossier contient les codes pythons excécutés par webots lors de l'aparition d'un véhicule employant le controleur cité.
+- [protos](protos/)
+- [worlds](worlds/)

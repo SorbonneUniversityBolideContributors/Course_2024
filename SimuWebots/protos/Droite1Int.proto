@@ -1,0 +1,95 @@
+#VRML_SIM R2023a utf8
+PROTO Droite1Int [
+ 
+]
+{
+	Solid {
+	  translation 0 1 0
+	  children [
+		Solid {
+		  translation 0.9999804957468693 3.137989393442453e-06 0.18913194077891265
+		  rotation 0.999999980700539 -0.00014021744541619152 0.0001376153688538364 1.5700260123038905
+		  children [
+		    Shape {
+		      appearance PBRAppearance {
+		        baseColor 1 0 0
+		        roughness 0.5
+		        metalness 0
+		      }
+		      geometry Mesh {
+		        url [
+		          "./obj/ImageToStl.com_bloc_1m.obj"
+		        ]
+		      }
+		    }
+		  ]
+		  name "solid(1)"
+		  boundingObject Mesh {
+		    url [
+		      "./obj/ImageToStl.com_bloc_1m.obj"
+		    ]
+		  }
+		  physics Physics {
+		  }
+		  linearVelocity -1.7975429545904332e-05 0.00033060523370331444 2.6847208349808733e-06
+		  angularVelocity -1.0771717901808375e-05 4.832154262815934e-07 -0.0001663972979188088
+		}
+		Solid {
+		  translation -1.0000207587869243 0.0028317161601649765 0.19009129113229073
+		  rotation 0.9999994951677489 0.000601805590084492 0.000804670292238526 1.5697681102224388
+		  children [
+		    Shape {
+		      appearance PBRAppearance {
+		        baseColor 1 0 0
+		        roughness 0.5
+		        metalness 0
+		      }
+		      geometry Mesh {
+		        url [
+		          "./obj/ImageToStl.com_bloc_1m.obj"
+		        ]
+		      }
+		    }
+		  ]
+		  name "solid(2)"
+		  boundingObject Mesh {
+		    url [
+		      "./obj/ImageToStl.com_bloc_1m.obj"
+		    ]
+		  }
+		  physics Physics {
+		  }
+		  linearVelocity 1.5509961358557763e-05 -0.0012026070867465926 1.6286676863259638e-05
+		  angularVelocity 6.55101412593043e-05 -6.6826815074404516e-06 -0.0006035247694153533
+		}
+		Solid {
+		  translation -4.1888651074855605e-05 -0.00277016326396351 0.189839352331302
+		  rotation 0.9999994495650951 0.0004619500817514693 0.0009420571261183904 1.5702116576660312
+		  children [
+		    Shape {
+		      appearance PBRAppearance {
+		        baseColor 1 0 0
+		        roughness 0.5
+		        metalness 0
+		      }
+		      geometry Mesh {
+		        url [
+		          "./obj/ImageToStl.com_bloc_1m.obj"
+		        ]
+		      }
+		    }
+		  ]
+		  boundingObject Mesh {
+		    url [
+		      "./obj/ImageToStl.com_bloc_1m.obj"
+		    ]
+		  }
+		  physics Physics {
+		  }
+		  linearVelocity 6.791176530125775e-06 0.0008713396765652717 -1.9257103240012648e-05
+		  angularVelocity -5.540795933077033e-05 -7.829911354453225e-06 -0.0007652551012919864
+		}
+	  ]
+	  name "ligne droite int 1 "
+	}
+}

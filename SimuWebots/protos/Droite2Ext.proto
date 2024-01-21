@@ -1,0 +1,151 @@
+#VRML_SIM R2023a utf8
+PROTO Droite2Ext [
+ 
+]
+{
+	Solid {
+	  translation 0 -2 0
+	  children [
+		Solid {
+		  translation 0.9999857531248847 0.0038161473640052623 0.18897273900642325
+		  rotation 0.9999990396983677 -0.000997285464025987 -0.0009623014319310905 1.5697565989176356
+		  children [
+		    Shape {
+		      appearance PBRAppearance {
+		        baseColor 0 1 0
+		        roughness 0.5
+		        metalness 0
+		      }
+		      geometry Mesh {
+		        url [
+		          "./obj/ImageToStl.com_bloc_1m.obj"
+		        ]
+		      }
+		    }
+		  ]
+		  name "solid(1)"
+		  boundingObject Mesh {
+		    url [
+		      "./obj/ImageToStl.com_bloc_1m.obj"
+		    ]
+		  }
+		  physics Physics {
+		  }
+		  linearVelocity 5.4276271066509476e-06 0.0003301735971666096 -5.8921818122470784e-05
+		  angularVelocity 0.00034925987803091586 1.575709864386187e-05 -0.00033175458311217115
+		}
+		Solid {
+		  translation -1.0000168158907716 0.0008016887884387813 0.18900143111664075
+		  rotation 0.9999999555707326 -0.0002519193370367805 -0.0001593586534549896 1.569961733466227
+		  children [
+		    Shape {
+		      appearance PBRAppearance {
+		        baseColor 0 1 0
+		        roughness 0.5
+		        metalness 0
+		      }
+		      geometry Mesh {
+		        url [
+		          "./obj/ImageToStl.com_bloc_1m.obj"
+		        ]
+		      }
+		    }
+		  ]
+		  name "solid(2)"
+		  boundingObject Mesh {
+		    url [
+		      "./obj/ImageToStl.com_bloc_1m.obj"
+		    ]
+		  }
+		  physics Physics {
+		  }
+		  linearVelocity -4.31958360927056e-06 3.678961759055762e-05 3.7288243893800066e-05
+		  angularVelocity -1.086325661879046e-05 2.154032555318244e-05 -9.756547288313249e-05
+		}
+		Solid {
+		  translation -3.270279329946835e-06 -0.003863269152060589 0.19033314346993319
+		  rotation 0.9999990633792777 -0.0010021698968450327 -0.0009321459462149177 1.570210088814892
+		  children [
+		    Shape {
+		      appearance PBRAppearance {
+		        baseColor 0 1 0
+		        roughness 0.5
+		        metalness 0
+		      }
+		      geometry Mesh {
+		        url [
+		          "./obj/ImageToStl.com_bloc_1m.obj"
+		        ]
+		      }
+		    }
+		  ]
+		  boundingObject Mesh {
+		    url [
+		      "./obj/ImageToStl.com_bloc_1m.obj"
+		    ]
+		  }
+		  physics Physics {
+		  }
+		  linearVelocity -9.826947869605428e-07 -0.0004173889736044848 1.5623556513600918e-05
+		  angularVelocity -0.0003687271251098831 -3.0067360754222036e-06 -0.00028862784356322016
+		}
+		Solid {
+		  translation 2.000030121483889 6.04224190170477e-05 0.1900080298948671
+		  rotation 0.9999999933975536 6.395183766596246e-05 -9.547279804455219e-05 1.570013392706378
+		  children [
+		    Shape {
+		      appearance PBRAppearance {
+		        baseColor 0 1 0
+		        roughness 0.5
+		        metalness 0
+		      }
+		      geometry Mesh {
+		        url [
+		          "./obj/ImageToStl.com_bloc_1m.obj"
+		        ]
+		      }
+		    }
+		  ]
+		  name "solid(3)"
+		  boundingObject Mesh {
+		    url [
+		      "./obj/ImageToStl.com_bloc_1m.obj"
+		    ]
+		  }
+		  physics Physics {
+		  }
+		  linearVelocity 7.507146395564668e-06 0.0001663596410513761 4.687695604181854e-05
+		  angularVelocity 1.1941022135792182e-05 2.520131564795273e-05 -8.377651188070208e-05
+		}
+		Solid {
+		  translation -2.0000173086919815 -0.0008148256054476555 0.19012219306864525
+		  rotation 0.9999999471886771 -0.0003110927907262257 -9.40421095204254e-05 1.570058420139365
+		  children [
+		    Shape {
+		      appearance PBRAppearance {
+		        baseColor 0 1 0
+		        roughness 0.5
+		        metalness 0
+		      }
+		      geometry Mesh {
+		        url [
+		          "./obj/ImageToStl.com_bloc_1m.obj"
+		        ]
+		      }
+		    }
+		  ]
+		  name "solid(4)"
+		  boundingObject Mesh {
+		    url [
+		      "./obj/ImageToStl.com_bloc_1m.obj"
+		    ]
+		  }
+		  physics Physics {
+		  }
+		  linearVelocity -7.632485613460315e-06 -0.0001159337540445526 -4.0866779008895326e-05
+		  angularVelocity 1.747197245999929e-05 2.0042984300010637e-05 -5.8775496957292726e-05
+		}
+	  ]
+	  name "ligne droite ext 2"
+	}
+}
