@@ -2,6 +2,11 @@
 
 Ce tutoriel décrit la procédure de modification des modèles 3D utilisés dans le simulateur Webots.
 
+Avant du véhicule          |  Arrière du véhicule
+:-------------------------:|:-------------------------:
+![](bolide_front.jpg)      |![bolide_back.jpg](bolide_back.jpg)
+
+
 ## Description des fichiers véhicule
 
 ### Imports

@@ -1,9 +1,20 @@
 # Simulations Webots pour la course de voitures autonomes
 
+
+![](tutorials/Ecran_ouverture_simulation.png)
+
+
 Ce dossier contient les fichiers nécéssaires à l'utilisation du simulateur Webots pour la course de voitures autonomes.
 Dans un premier temps, il est **impératif** de lire les tutoriels d'installation et d'utilisation simulateur, disponibles dans le dossier [tutorials](tutorials/).
 
 Le simulateur est implémenté de sorte que le robot simulé soit le plus proche possible du robot réel, que ce soit en termes d'architecture électronique (capteurs), physique (poids, inertie...) ou d'implémentation (interfaçage avec ROS). Les algorithmes réalisés pour le calcul des trajectoire de ce robot devront être facilement compréhensibles (commentaires, documentation, codes lisibles), légers en consommation CPU et surtout paramétrables (l'environnement physique réel du robot pourra être bien différent de son environnement simulé : les paramètres utilisé dans les algorithmes simulé seront donc amenés à évoluer une fois dans le monde réel).
+
+
+
+Véhicule simulé | Exemple de piste de simulation
+:-------------------------:|:-------------------------:
+![](tutorials/bolide_front.jpg) | ![](tutorials/Piste_StCyr.png)
+
 
 **Note importante 1 :** Ce simulateur a été intégralement développé sous Linux, et n'a pas été testé sous Windows ou MacOS. Il est possible d'installer WeBots sous ces deux OS, mais l'utilisation de ROS dans ces environnements est moins naturelle que sous Linux. N'ayant pas accès à une machine équipée de Windows ou MacOS, je ne peux pas fournir d'instructions d'installation du simulateur pour ces deux OS.
 
