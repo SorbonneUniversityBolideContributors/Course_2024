@@ -1,6 +1,7 @@
 # Connect RPI4 to Wifi network
 
-Thei're two configuration for the RPI4: Access Point mode (AP) and Client mode (Wifi).
+Thei're two configuration for the RPI4: Access Point mode (AP) and Client mode (Wifi). If you want to do this config again on Debian 11 (bullseye) or previous release (on a new RPI4 or when you change the SD card) please follow this instructions: [https://raspberrytips.fr/point-acces-wifi-raspberry-pi/](https://raspberrytips.fr/point-acces-wifi-raspberry-pi/).
+Then you can use the script to switch between the two modes by placing it in the root of the bolide (you can find the script in the `Bolide scripts` folder).
 
 ## AP mode
 
