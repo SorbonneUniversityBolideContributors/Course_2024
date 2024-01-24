@@ -9,6 +9,7 @@ from simu_lidar_publisher import SimuLidarPublisher
 from simu_camera_publisher import SimuCameraPublisher
 from simu_imu_publisher import SimuImuPublisher
 from simu_rear_ranges_publisher import SimuRearRangesPublisher
+from simu_fork_publisher import SimuForkPublisher
 
 import rospy
 
@@ -23,6 +24,7 @@ my_lidar_publisher = SimuLidarPublisher(my_driver, my_bot_name)
 my_camera_publisher = SimuCameraPublisher(my_driver, my_bot_name)
 my_imu_publisher = SimuImuPublisher(my_driver, my_bot_name)
 my_rear_ranges_publisher = SimuRearRangesPublisher(my_driver, my_bot_name)
+my_fork_publisher = SimuForkPublisher(my_controller, my_bot_name)
 
 
 
@@ -39,12 +41,15 @@ rospy.Timer(rospy.Duration(1 / F_IMU), my_imu_publisher.publish_imu_data)
 F_REAR_RANGES = 12
 rospy.Timer(rospy.Duration(1 / F_REAR_RANGES), my_rear_ranges_publisher.publish_rear_range_data)
 
+F_FORK = 12
+rospy.Timer(rospy.Duration(1 / F_FORK), my_fork_publisher.publish_fork_data)
+
 
 rospy.loginfo("Controller initialized, now publishing data...")
 
 
 #%% MAIN LOOP ===========================================================================
-rate = rospy.Rate(30)
+rate = rospy.Rate(50)
 
 while not rospy.is_shutdown():
     # Your control logic here

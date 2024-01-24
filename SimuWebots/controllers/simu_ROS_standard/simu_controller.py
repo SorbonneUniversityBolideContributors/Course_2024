@@ -25,8 +25,13 @@ class SimuController():
         self.sub_param = rospy.Subscriber("/param_change_alert", Bool, self.get_max_params)
         self.sub_cmd_vel = rospy.Subscriber("/" + bot_name + "/cmd_vel", SpeedDirection, self.set_command)
 
+        # Get the max speed and steering angle from the parameter server
         self.get_max_params()
         self.set_command(SpeedDirection(0., 0.))
+
+        # Initialize the speed and steering angle
+        self.speed = 0.
+        self.direction = 0.
 
     def get_max_params(self, value = True) :
         self.maxSpeed = rospy.get_param('/simulation_max_speed', default = 18) / 3.6
@@ -49,6 +54,10 @@ class SimuController():
         assert speed_command >= -1 and speed_command <= 1, "Speed command must be between -1 and 1 (or 2 for breaks)"
         assert steeringAngle_command >= -1 and steeringAngle_command <= 1, "Steering angle command must be between -1 and 1"
         
+        # convert the commands to the correct range
+        self.speed = speed_command * self.maxSpeed
+        self.direction = steeringAngle_command * self.maxSteeringAngle
+
         # apply the commands
-        self.driver.setCruisingSpeed(speed_command * self.maxSpeed)
-        self.driver.setSteeringAngle(steeringAngle_command * self.maxSteeringAngle)
+        self.driver.setCruisingSpeed(self.speed)
+        self.driver.setSteeringAngle(self.direction)
