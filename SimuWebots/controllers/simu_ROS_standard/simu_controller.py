@@ -24,14 +24,21 @@ class SimuController():
         # Subscribers
         self.sub_param = rospy.Subscriber("/param_change_alert", Bool, self.get_max_params)
         self.sub_cmd_vel = rospy.Subscriber("/" + bot_name + "/cmd_vel", SpeedDirection, self.set_command)
+        self.sub_emergency_break = rospy.Subscriber("/" + bot_name + "/emergency_break", Bool, self.emergency_break_callback)
+
+        # Log info
+        rospy.loginfo("Initializing controller for " + bot_name)
+        rospy.loginfo("    Subscribing to /" + bot_name + "/cmd_vel")
+        rospy.loginfo("    Subscribing to /" + bot_name + "/emergency_break")
 
         # Get the max speed and steering angle from the parameter server
         self.get_max_params()
         self.set_command(SpeedDirection(0., 0.))
 
-        # Initialize the speed and steering angle
+        # Initialize the speed, steering angle, and emergency break
         self.speed = 0.
         self.direction = 0.
+        self.emergency_break = False
 
     def get_max_params(self, value = True) :
         self.maxSpeed = rospy.get_param('/simulation_max_speed', default = 18) / 3.6
@@ -39,7 +46,16 @@ class SimuController():
 
     def cmd_vel_callback(self, msg:SpeedDirection):
         """Callback for the cmd_vel topic"""
-        self.set_command(msg.speed, msg.direction)
+        if not self.emergency_break:
+            self.set_command(msg.speed, msg.direction)
+
+    def emergency_break_callback(self, msg:Bool):
+        """Callback for the emergency_break topic"""
+        if msg.data:
+            self.set_command(SpeedDirection(0., 0.))
+            self.emergency_break = True
+        else:
+            self.emergency_break = False
 
     def set_command(self, msg:SpeedDirection):
         """Set the speed and steering angle of the vehicle"""
