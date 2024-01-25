@@ -30,9 +30,9 @@ class SimuRearRangesPublisher():
         self.sensorTimeStep = 4 * self.basicTimeStep
 
         # Sensors bounds
-        self.ir_min_range = 0.07
-        self.ir_max_range = 0.34
-        self.sonar_min_range = 0.05
+        self.ir_min_range = 0.06
+        self.ir_max_range = 0.3
+        self.sonar_min_range = 0.07
         self.sonar_max_range = 0.5
 
         # sensors initialization
