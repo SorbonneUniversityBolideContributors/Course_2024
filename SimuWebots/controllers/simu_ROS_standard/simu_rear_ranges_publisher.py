@@ -56,23 +56,19 @@ class SimuRearRangesPublisher():
         # Rear IR sensors ===============================================================
         for sensorFrame in [self.multiRangeFrame.IR_rear_left, self.multiRangeFrame.IR_rear_right]:
             sensorFrame = SensorRange()
-            sensorFrame.header.stamp = rospy.Time.now()
             sensorFrame.header.frame_id = "rear_ir_range_frame"
             sensorFrame.radiation_type = SensorRange.INFRARED
             sensorFrame.field_of_view = 0.1
             sensorFrame.min_range = self.ir_min_range
             sensorFrame.max_range = self.ir_max_range
-            sensorFrame.range = 0.0
         
         # Rear sonar sensor =============================================================
         self.multiRangeFrame.Sonar_rear = SensorRange()
-        self.multiRangeFrame.Sonar_rear.header.stamp = rospy.Time.now()
         self.multiRangeFrame.Sonar_rear.header.frame_id = "rear_sonar_range_frame"
         self.multiRangeFrame.Sonar_rear.radiation_type = SensorRange.ULTRASOUND
         self.multiRangeFrame.Sonar_rear.field_of_view = 0.1
         self.multiRangeFrame.Sonar_rear.min_range = self.sonar_min_range
         self.multiRangeFrame.Sonar_rear.max_range = self.sonar_max_range
-        self.multiRangeFrame.Sonar_rear.range = 0.0
 
     def crop_range(self, range:float, min_range:float, max_range:float) -> float:
         """Crops the range value between min_range and max_range"""
