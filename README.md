@@ -15,12 +15,12 @@ https://ajuton-ens.github.io/CourseVoituresAutonomesSaclay/
 
 ## Getting Started
 
-Check the [Robot_setup.md](Robot_setup.md) file to get started with the robot.
+Check the [Robot_setup.md](documentation/Robot_setup.md) file to get started with the robot.
 
 Bolide's IP when connected to the rooter (SSID=R15-AF66) at St-Cyr
 - IP bolide2: 192.168.137.78
 - IP bolide1: 192.168.137.165
 
-Check the [ros_bashrc_lines.md](ros_bashrc_lines.md) file and copy ir to you're own `~/.bashrc`.
+Check the [ros_bashrc_lines.md](documentation/ros_bashrc_lines.md) file and copy ir to you're own `~/.bashrc`.
 It'll save you a lot of trouble when connecting to the robots or interacting with the simulation or simply with ROS.
 Make sure that there are no double declarations and that the ROS environement variables `ROS_NAMESPACE` and `ROS_MASTER_URI` are unset.
