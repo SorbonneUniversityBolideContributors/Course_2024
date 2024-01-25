@@ -7,7 +7,7 @@
 Ce dossier contient les fichiers nécéssaires à l'utilisation du simulateur Webots pour la course de voitures autonomes.
 Dans un premier temps, il est **impératif** de lire les tutoriels d'installation et d'utilisation simulateur, disponibles dans le dossier [tutorials](tutorials/).
 
-Le simulateur est implémenté de sorte que le robot simulé soit le plus proche possible du robot réel, que ce soit en termes d'architecture électronique (capteurs), physique (poids, inertie...) ou d'implémentation (interfaçage avec ROS). Les algorithmes réalisés pour le calcul des trajectoire de ce robot devront être facilement compréhensibles (commentaires, documentation, codes lisibles), légers en consommation CPU et surtout paramétrables (l'environnement physique réel du robot pourra être bien différent de son environnement simulé : les paramètres utilisé dans les algorithmes simulé seront donc amenés à évoluer une fois dans le monde réel).
+Le simulateur est implémenté de sorte que le robot simulé soit le plus proche possible du robot réel, que ce soit en termes d'architecture électronique (capteurs), physique (poids, inertie...) ou d'implémentation (interfaçage avec ROS). Les algorithmes réalisés pour le calcul des trajectoires de ce robot devront être facilement compréhensibles (commentaires, documentation, codes lisibles), légers en consommation CPU et surtout paramétrables (l'environnement physique réel du robot pourra être bien différent de son environnement simulé : les paramètres utilisé dans les algorithmes simulés seront donc amenés à évoluer une fois dans le monde réel).
 
 
 
@@ -22,7 +22,7 @@ Véhicule simulé | Exemple de piste de simulation
 
 ## Contenu de SimuWebots
 
-- [controllers](controllers/) : Ce dossier contient les codes pythons excécutés par webots lors de l'aparition d'un véhicule employant le controleur cité.
+- [controllers](controllers/) : Ce dossier contient les codes pythons excécutés par webots lors de l'apparition d'un véhicule employant le controleur cité.
 - [protos](protos/) : Ce dossier contient les fichiers ```.proto``` décrivant les modèles 3D des objets utilisés dans les mondes de simulation.
 - [tutorials](tutorials/) : Ce dossier contient les tutoriels d'installation, d'utilisation et de modification du simulateur.
     - [tuto_installation.md](tutorials/tuto_installation.md) : Ce tutoriel décrit la procédure d'installation du simulateur.

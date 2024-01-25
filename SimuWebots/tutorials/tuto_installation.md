@@ -8,13 +8,13 @@ Ce tutoriel décrit la procédure d'installation du simulateur Webots sur un env
 - disposer des droits administrateurs dans cet environnement (sudo sous Linux)
 - Disposer d'une installation fonctionnelle de ROS1 (de préférence ROS Noetic)
 
-Une connexion Internet sera nécéssaire pour l'installation du logiciel et pour le téléchargement de certaines données du simulateur (modèles 3D, textures ...). 
+Une connexion Internet sera nécessaire pour l'installation du logiciel et pour le téléchargement de certaines données du simulateur (modèles 3D, textures ...). 
 
 ## Procédure d'installation de Webots :
 Sous Linux, dans un terminal, entrer les commandes :
 ```bash
 wget -qO- https://cyberbotics.com/Cyberbotics.asc | sudo apt-key add -
-sudo apt-add-repository 'deb https://cyberbotics.com/debian/ binary-amd64/
+sudo apt-add-repository 'deb https://cyberbotics.com/debian/ binary-amd64/'
 ```
 ```bash
 sudo apt-get update
@@ -26,7 +26,7 @@ Une fois l'installation terminée, il est possible de lancer WeBots directement 
 webots
 ```
  
-Pour pouvoir utiliser l'environement de simulation du robot, il faut égalmenet disposer du package ROS **webots_ros** :
+Pour pouvoir utiliser l'environnement de simulation du robot, il faut également disposer du package ROS **webots_ros** :
 
 ```bash
 sudo apt-get install ros-noetic-webots-ros
