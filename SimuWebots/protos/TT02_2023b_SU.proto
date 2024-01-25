@@ -74,6 +74,14 @@ PROTO TT02_2023b_SU [
         yAxis TRUE
         zAxis TRUE
       }
+      InertialUnit {
+        name "TT02_inertial_unit"
+        xAxis TRUE
+        zAxis TRUE
+        yAxis TRUE
+        resolution -1
+        noise 0.003
+      }
       Camera {
         name "TT02_camera"
       	translation 0.30 0 0.04

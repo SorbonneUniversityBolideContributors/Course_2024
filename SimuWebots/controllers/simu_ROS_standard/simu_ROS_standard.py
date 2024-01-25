@@ -49,7 +49,7 @@ rospy.loginfo("Controller initialized, now publishing data...")
 
 
 #%% MAIN LOOP ===========================================================================
-rate = rospy.Rate(50)
+rate = rospy.Rate(30)
 
 while not rospy.is_shutdown():
     # Your control logic here

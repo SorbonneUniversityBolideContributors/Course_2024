@@ -7,7 +7,7 @@ __date__ = "2023-01"
 
 #%% IMPORTS
 from vehicle import Driver
-from controller import Accelerometer, Gyro
+from controller import Accelerometer, Gyro, InertialUnit
 
 from sensor_msgs.msg import Imu as SensorImu
 import rospy
@@ -41,6 +41,9 @@ class SimuImuPublisher():
         self.gyro = Gyro("TT02_gyro")
         self.gyro.enable(self.sensorTimeStep)
 
+        self.inertial_unit = InertialUnit("TT02_inertial_unit")
+        self.inertial_unit.enable(self.sensorTimeStep)
+
         self.imuFrame = SensorImu()
         self.imuFrame.header.stamp = rospy.Time.now()
         self.imuFrame.header.frame_id = "imu_frame"
@@ -61,15 +64,23 @@ class SimuImuPublisher():
     def publish_imu_data(self, *args):
         """Publishes the accelerometer data in the publisher topic"""
 
+        # inertial unit
+        roll, pitch, yaw = self.inertial_unit.getRollPitchYaw()
+        self.imuFrame.orientation.x = roll
+        self.imuFrame.orientation.y = pitch
+        self.imuFrame.orientation.z = yaw
+
         # accelerometer
-        self.imuFrame.linear_acceleration.x = self.accelerometer.getValues()[0]
-        self.imuFrame.linear_acceleration.y = self.accelerometer.getValues()[1]
-        self.imuFrame.linear_acceleration.z = self.accelerometer.getValues()[2]
+        linear_acceleration = self.accelerometer.getValues()
+        self.imuFrame.linear_acceleration.x = linear_acceleration[0]
+        self.imuFrame.linear_acceleration.y = linear_acceleration[1]
+        self.imuFrame.linear_acceleration.z = linear_acceleration[2]
 
         # gyro
-        self.imuFrame.angular_velocity.x = self.gyro.getValues()[0]
-        self.imuFrame.angular_velocity.y = self.gyro.getValues()[1]
-        self.imuFrame.angular_velocity.z = self.gyro.getValues()[2]
+        angular_velocity = self.gyro.getValues()
+        self.imuFrame.angular_velocity.x = angular_velocity[1]
+        self.imuFrame.angular_velocity.y = angular_velocity[2]
+        self.imuFrame.angular_velocity.z = angular_velocity[0]
 
         self.imuFrame.header.stamp = rospy.Time.now()
         self.pub_imu.publish(self.imuFrame)
