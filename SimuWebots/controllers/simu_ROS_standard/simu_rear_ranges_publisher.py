@@ -58,7 +58,6 @@ class SimuRearRangesPublisher():
             sensorFrame = SensorRange()
             sensorFrame.header.frame_id = "rear_ir_range_frame"
             sensorFrame.radiation_type = SensorRange.INFRARED
-            sensorFrame.field_of_view = 0.1
             sensorFrame.min_range = self.ir_min_range
             sensorFrame.max_range = self.ir_max_range
         
@@ -66,7 +65,6 @@ class SimuRearRangesPublisher():
         self.multiRangeFrame.Sonar_rear = SensorRange()
         self.multiRangeFrame.Sonar_rear.header.frame_id = "rear_sonar_range_frame"
         self.multiRangeFrame.Sonar_rear.radiation_type = SensorRange.ULTRASOUND
-        self.multiRangeFrame.Sonar_rear.field_of_view = 0.1
         self.multiRangeFrame.Sonar_rear.min_range = self.sonar_min_range
         self.multiRangeFrame.Sonar_rear.max_range = self.sonar_max_range
 
