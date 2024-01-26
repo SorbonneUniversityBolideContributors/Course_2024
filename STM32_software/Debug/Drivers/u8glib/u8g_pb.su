@@ -1,0 +1,7 @@
+../Drivers/u8glib/u8g_pb.c:41:6:u8g_pb_Clear	24	static
+../Drivers/u8glib/u8g_pb.c:90:9:u8g_pb_IsYIntersection	24	static
+../Drivers/u8glib/u8g_pb.c:116:9:u8g_pb_IsXIntersection	24	static
+../Drivers/u8glib/u8g_pb.c:135:9:u8g_pb_IsIntersection	24	static
+../Drivers/u8glib/u8g_pb.c:154:6:u8g_pb_GetPageBox	16	static
+../Drivers/u8glib/u8g_pb.c:164:9:u8g_pb_Is8PixelVisible	24	static
+../Drivers/u8glib/u8g_pb.c:187:9:u8g_pb_WriteBuffer	24	static

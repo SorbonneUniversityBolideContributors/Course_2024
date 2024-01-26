@@ -1,0 +1,6 @@
+../Drivers/u8glib/u8g_pb8v1.c:50:6:u8g_pb8v1_Init	24	static
+../Drivers/u8glib/u8g_pb8v1.c:57:6:u8g_pb8v1_set_pixel	24	static
+../Drivers/u8glib/u8g_pb8v1.c:79:6:u8g_pb8v1_SetPixel	16	static
+../Drivers/u8glib/u8g_pb8v1.c:90:6:u8g_pb8v1_Set8PixelStd	24	static
+../Drivers/u8glib/u8g_pb8v1.c:111:6:u8g_pb8v1_Set8PixelOpt2	32	static
+../Drivers/u8glib/u8g_pb8v1.c:136:9:u8g_dev_pb8v1_base_fn	32	static

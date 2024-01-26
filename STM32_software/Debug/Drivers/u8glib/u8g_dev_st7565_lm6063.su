@@ -1,0 +1,2 @@
+../Drivers/u8glib/u8g_dev_st7565_lm6063.c:147:9:u8g_dev_st7565_lm6063_fn	32	static
+../Drivers/u8glib/u8g_dev_st7565_lm6063.c:185:9:u8g_dev_st7565_lm6063_2x_fn	32	static

@@ -1,0 +1,4 @@
+../Drivers/u8glib/u8g_com_api_16gr.c:46:9:u8g_WriteByteBWTo16GrDevice	1
+../Drivers/u8glib/u8g_com_api_16gr.c:60:9:u8g_WriteSequenceBWTo16GrDevice	3
+../Drivers/u8glib/u8g_com_api_16gr.c:72:9:u8g_WriteByte4LTo16GrDevice	1
+../Drivers/u8glib/u8g_com_api_16gr.c:85:9:u8g_WriteSequence4LTo16GrDevice	3

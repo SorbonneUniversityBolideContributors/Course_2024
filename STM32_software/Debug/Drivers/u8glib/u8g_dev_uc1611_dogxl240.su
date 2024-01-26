@@ -1,0 +1,2 @@
+../Drivers/u8glib/u8g_dev_uc1611_dogxl240.c:76:13:u8g_dev_dogxl240_set_page	24	static
+../Drivers/u8glib/u8g_dev_uc1611_dogxl240.c:90:16:u8g_dev_uc1611_dogxl240_fn	32	static

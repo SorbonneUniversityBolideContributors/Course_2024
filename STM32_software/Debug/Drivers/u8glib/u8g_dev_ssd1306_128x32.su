@@ -1,0 +1,2 @@
+../Drivers/u8glib/u8g_dev_ssd1306_128x32.c:212:9:u8g_dev_ssd1306_128x32_fn	32	static
+../Drivers/u8glib/u8g_dev_ssd1306_128x32.c:251:9:u8g_dev_ssd1306_128x32_2x_fn	32	static

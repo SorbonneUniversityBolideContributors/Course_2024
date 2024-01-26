@@ -1,0 +1,9 @@
+../Drivers/u8glib/u8g_rect.c:41:6:u8g_draw_hline	3
+../Drivers/u8glib/u8g_rect.c:59:6:u8g_draw_vline	3
+../Drivers/u8glib/u8g_rect.c:77:6:u8g_DrawHLine	2
+../Drivers/u8glib/u8g_rect.c:84:6:u8g_DrawVLine	2
+../Drivers/u8glib/u8g_rect.c:92:6:u8g_DrawFrame	2
+../Drivers/u8glib/u8g_rect.c:110:6:u8g_draw_box	2
+../Drivers/u8glib/u8g_rect.c:121:6:u8g_DrawBox	2
+../Drivers/u8glib/u8g_rect.c:129:6:u8g_DrawRFrame	2
+../Drivers/u8glib/u8g_rect.c:183:6:u8g_DrawRBox	2

@@ -1,0 +1,4 @@
+../Core/Src/CoVAPSy_buzzer_TOR.c:12:6:buzzer_start_frequency_Hz	24	static
+../Core/Src/CoVAPSy_buzzer_TOR.c:28:6:buzzer_start	8	static
+../Core/Src/CoVAPSy_buzzer_TOR.c:33:6:buzzer_stop	8	static
+../Core/Src/CoVAPSy_buzzer_TOR.c:37:6:buzzer_gamme	8	static

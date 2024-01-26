@@ -1,0 +1,7 @@
+../Drivers/u8glib/u8g_cursor.c:39:6:u8g_SetCursorFont	1
+../Drivers/u8glib/u8g_cursor.c:44:6:u8g_SetCursorStyle	1
+../Drivers/u8glib/u8g_cursor.c:49:6:u8g_SetCursorColor	1
+../Drivers/u8glib/u8g_cursor.c:55:6:u8g_SetCursorPos	1
+../Drivers/u8glib/u8g_cursor.c:61:6:u8g_EnableCursor	1
+../Drivers/u8glib/u8g_cursor.c:66:6:u8g_DisableCursor	1
+../Drivers/u8glib/u8g_cursor.c:71:6:u8g_DrawCursor	1

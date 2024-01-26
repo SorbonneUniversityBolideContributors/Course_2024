@@ -1,0 +1,2 @@
+../Drivers/u8glib/u8g_dev_uc1608_240x64.c:91:9:u8g_dev_uc1608_240x64_fn	5
+../Drivers/u8glib/u8g_dev_uc1608_240x64.c:123:9:u8g_dev_uc1608_240x64_2x_fn	4

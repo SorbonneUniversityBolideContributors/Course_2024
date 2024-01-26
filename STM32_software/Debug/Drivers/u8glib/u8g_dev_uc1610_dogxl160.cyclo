@@ -1,0 +1,5 @@
+../Drivers/u8glib/u8g_dev_uc1610_dogxl160.c:79:16:u8g_dev_1to2	1
+../Drivers/u8glib/u8g_dev_uc1610_dogxl160.c:99:9:u8g_dev_uc1610_dogxl160_bw_fn	6
+../Drivers/u8glib/u8g_dev_uc1610_dogxl160.c:143:9:u8g_dev_uc1610_dogxl160_gr_fn	5
+../Drivers/u8glib/u8g_dev_uc1610_dogxl160.c:175:9:u8g_dev_uc1610_dogxl160_2x_bw_fn	8
+../Drivers/u8glib/u8g_dev_uc1610_dogxl160.c:236:9:u8g_dev_uc1610_dogxl160_2x_gr_fn	6

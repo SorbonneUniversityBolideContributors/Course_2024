@@ -1,0 +1,7 @@
+../Drivers/u8glib/u8g_com_io.c:398:9:u8g_Pin	1
+../Drivers/u8glib/u8g_com_io.c:405:6:u8g_SetPinOutput	1
+../Drivers/u8glib/u8g_com_io.c:409:6:u8g_SetPinInput	1
+../Drivers/u8glib/u8g_com_io.c:413:6:u8g_SetPinLevel	1
+../Drivers/u8glib/u8g_com_io.c:417:9:u8g_GetPinLevel	1
+../Drivers/u8glib/u8g_com_io.c:444:6:u8g_SetPIOutput	1
+../Drivers/u8glib/u8g_com_io.c:448:6:u8g_SetPILevel	1

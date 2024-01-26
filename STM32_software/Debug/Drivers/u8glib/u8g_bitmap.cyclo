@@ -1,0 +1,8 @@
+../Drivers/u8glib/u8g_bitmap.c:39:6:u8g_DrawHBitmap	2
+../Drivers/u8glib/u8g_bitmap.c:50:6:u8g_DrawBitmap	3
+../Drivers/u8glib/u8g_bitmap.c:64:6:u8g_DrawHBitmapP	2
+../Drivers/u8glib/u8g_bitmap.c:75:6:u8g_DrawBitmapP	3
+../Drivers/u8glib/u8g_bitmap.c:90:13:u8g_DrawHXBM	5
+../Drivers/u8glib/u8g_bitmap.c:116:6:u8g_DrawXBM	3
+../Drivers/u8glib/u8g_bitmap.c:135:13:u8g_DrawHXBMP	5
+../Drivers/u8glib/u8g_bitmap.c:161:6:u8g_DrawXBMP	3
