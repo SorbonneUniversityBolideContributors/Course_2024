@@ -57,11 +57,18 @@ class SimuCameraPublisher():
         self.imageFrame.is_bigendian = False
         self.imageFrame.height, self.imageFrame.width = CAMERA_HEIGHT, CAMERA_WIDTH
         self.imageFrame.step = 3 * CAMERA_WIDTH # This is the full row length in bytes. It's 3 times the width because each pixel has three color channels (RGB).
-        
+    
+    def image_4_to_3_channels(self, image:bytes) -> bytes:
+        """Converts a 4 channels image to a 3 channels image"""
+        image_3_channels = bytes()
+        for i in range(0, len(image), 4):
+            image_3_channels += image[i:i+3]
+        return image_3_channels
+
 
     def publish_camera_data(self, *args):
         """Publishes the camera data in the publisher topic"""
         # camera
-        self.imageFrame.data = self.camera.getImage()
+        self.imageFrame.data = self.image_4_to_3_channels(self.camera.getImage())
         self.imageFrame.header.stamp = rospy.Time.now()
         self.pub_img.publish(self.imageFrame)
