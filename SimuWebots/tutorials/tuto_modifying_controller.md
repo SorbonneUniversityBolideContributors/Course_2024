@@ -1,36 +1,36 @@
-# Tutoriel : Modification du contrôleur du robot
+# Tutorial: Modifying the robot controller
 
-Ce tutoriel décrit la procédure de modification du contrôleur du robot simulé dans Webots.
+This tutorial describes how to modify the simulated robot controller in Webots.
 
-## Déscription du contrôleur utilisé
+## Description of the controller used
 
-Le contrôleur utilisé par le robot simulé est un contrôleur ROS. Il est donc possible de le modifier en utilisant les outils de ROS. Le contrôleur est implémenté dans le dossier [controllers/simu_ROS_standard/](../controllers/simu_ROS_standard/). Ce dossier contient les fichiers nécéssaires à l'utilisation du contrôleur ROS dans Webots.
+The controller used by the simulated robot is a ROS controller. It is therefore possible to modify it using the ROS tools. The controller is implemented in the [controllers/simu_ROS_standard/](../controllers/simu_ROS_standard/) folder. This folder contains the files required to use the ROS controller in Webots.
 
-Lors du démarage de la simulation, Webots lance le script python [simu_ROS_standard.py](../controllers/simu_ROS_standard/simu_ROS_standard.py). Ce script python est le point d'entrée du contrôleur ROS.
+When starting the simulation, Webots launches the python script [simu_ROS_standard.py](../controllers/simu_ROS_standard/simu_ROS_standard.py). This python script is the entry point of the ROS controller.
 
-Pour standardiser le fonctionnement du véhicule simulé, ce point d'entrée instancie des classes python situées dans le même dossier et qui correspondent aux différentes parties du robot simulé. On peut trouver **une classe pour le control** du robot, c'est à dire l'application des commandes de vitesse et de direction et **une classe par capteur** utilisé par le robot simulé.
+To standardize the operation of the simulated vehicle, this input point instantiates python classes located in the same folder and that correspond to the different parts of the simulated robot. One can find **a class for the control** of the robot, ie the application of the speed and direction controls and **a class per sensor** used by the simulated robot.
 
-Chaque classe capteur définit un topic ROS sur lequel elle publie les données du capteur. De même, la classe control définit un topic ROS sur lequel elle souscrit pour recevoir les commandes de vitesse et de direction à appliquer au robot simulé.
+Each sensor class defines a ROS topic on which it publishes the sensor data. Similarly, the control class defines a ROS topic on which it subscribes to receive the speed and direction commands to be applied to the simulated robot.
 
-Les noms des topics ROS utilisés par le contrôleur sont définis de façon à être cohérents avec les noms des topics ROS utilisés par le robot réel. Ainsi, il est possible de tester un algorithme de navigation sur le robot simulé avant de l'implémenter sur le robot réel sans avoir à modifier le code de l'algorithme.
+The names of the ROS topics used by the controller are defined so as to be consistent with the names of the ROS topics used by the real robot. Thus, it is possible to test a navigation algorithm on the simulated robot before implementing it on the real robot without having to modify the code of the algorithm.
 
-## Ajout d'un capteur
+## Adding a sensor
 
-Pour ajouter un capteur au robot simulé, il faut créer une nouvelle classe dans le dossier [simu_ROS_standard/](../controllers/simu_ROS_standard/). Il est conseillé de copier le code d'une classe déjà existante et de le modifier pour l'adapter au nouveau capteur.
+To add a sensor to the simulated robot, create a new class in the [simu_ROS_standard/] folder (../controllers/simu_ROS_standard/). It is advisable to copy the code of an already existing class and modify it to fit the new sensor.
 
 
-### Pré-requis
+### Prerequisites
 
-Pour publier les données d'un nouveau capteur, il est nécéssaire d'avoir au préalable ajouté le capteur au modèle 3D du robot simulé (voir [tuto_modifying_robot.md](tuto_modifying_robot.md) pour plus d'informations).
+To publish the data of a new sensor, it is necessary to have first added the sensor to the 3D model of the simulated robot (see [tuto_modifying_robot.md](tuto_modifying_robot.md) for more information).
 
-### Import des modules python
-Importer les modules python nécéssaires à son fonctionnement.
-- Le module ```rospy``` est nécéssaire pour la communication avec ROS.
-- Le module ```Driver``` est nécéssaire pour la communication avec Webots.
-- Il existe enfin un module par type de capteur utilisé par le robot simulé dans Webots (voir https://cyberbotics.com/doc/guide/sensors). 
-- Importer le type de message ROS correspondant aux données publiées par le capteur. (Il est recommandé d'utiliser les ```sensor_msgs``` pour les capteurs standards, voir http://wiki.ros.org/sensor_msgs).
+### Import python modules
+Import the python modules necessary for its operation.
+- The ```rospy``` module is required for communication with ROS.
+- The ```Driver``` module is required for communication with Webots.
+- Finally, there is a module by type of sensor used by the simulated robot in Webots (see https://cyberbotics.com/doc/guide/sensors). 
+- Import the ROS message type corresponding to the data published by the sensor. (It is recommended to use the ```sensor_msgs``` for standard sensors, see http://wiki.ros.org/sensor_msgs).
 
-Exemple pour la caméra :
+Example for the camera:
 ```python
 from vehicle import Driver
 from controller import Camera
@@ -38,3 +38,13 @@ from controller import Camera
 from sensor_msgs.msg import Image as SensorImage
 import rospy
 ```
+
+## Tutorials
+
+- [tuto_installation.md](tutorials/tuto_installation.md) : This tutorial describes how to install the simulator.
+- [tuto_usage.md](tutorials/tuto_usage.md) : This tutorial describes how to use the simulator.
+- [tuto_modifying_robot.md](tutorials/tuto_modifying_robot.md) : This tutorial describes how to modify the 3D models used in the simulator.
+- [tuto_modifying_world.md](tutorials/tuto_modifying_world.md) : This tutorial describes how to modify the worlds used in the simulator.
+- [tuto_modifying_controller.md](tutorials/tuto_modifying_controller.md) : This tutorial describes how to modify the controllers used in the simulator.
+
+[main_readme](../README.md)

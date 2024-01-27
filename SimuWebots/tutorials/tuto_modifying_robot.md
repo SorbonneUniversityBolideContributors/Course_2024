@@ -1,17 +1,19 @@
-# Tutoriel : modifier un robot dans Webots
+# Tutorial: edit a bot in Webots
 
-Ce tutoriel décrit la procédure de modification des modèles 3D utilisés dans le simulateur Webots.
+This tutorial describes how to modify the 3D models used in the Webots simulator.
 
-Avant du véhicule          |  Arrière du véhicule
+The procedure is quite simple, but requires a good knowledge of the Webots simulator and its syntax.
+
+Front of Vehicle   |  Rear of Vehicle
 :-------------------------:|:-------------------------:
 ![](bolide_front.jpg)      |![bolide_back.jpg](bolide_back.jpg)
 
 
-## Description des fichiers véhicule
+## Description of vehicle files
 
 ### Imports
 
-Au début du script .proto, il faut importer les modules nécéssaires à la création du modèle 3D. Il est possible d'importer des modules externes, mais il est conseillé d'utiliser les modules fournis par Webots.
+At the beginning of the script . proto, it is necessary to import the modules necessary to create the 3D model. It is possible to import external modules, but it is advisable to use the modules provided by Webots.
 
 ```proto
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/abstract/Car.proto"
@@ -19,9 +21,9 @@ EXTERNPROTO "TT02Wheel.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/devices/slamtec/protos/RpLidarA2.proto"
 ```
 
-### Paramètres du véhicule
+### Vehicle Settings
 
-Il est possible de modifier les paramètres du véhicule simulé en modifiant les valeurs des variables définies dans le fichier .proto. Ces variables sont définies dans les parties ```field``` et ```Car``` du fichier .proto
+You can change the parameters of the simulated vehicle by changing the values of the variables defined in the .proto file. These variables are defined in the ```field``` and ```car``` parts of the .proto.
 
 
 ```proto
@@ -81,9 +83,9 @@ PROTO TT02_2023b [
 }
 ```
 
-### Capteurs
+### Sensors
 
-Il est possible d'ajouter des capteurs au véhicule simulé en ajoutant des lignes dans la partie ```extensionSlot``` de ```Car```. Il faut alors ce référer à la documentation de Webots pour connaître les paramètres nécéssaires à l'ajout de ce capteur. (voir https://cyberbotics.com/doc/guide/sensors)
+It is possible to add sensors to the simulated vehicle by adding lines in the Extension section of the Car. Refer to the Webots documentation for the parameters required to add this sensor. (see https://cyberbotics.com/doc/guide/sensors)
 
 ```proto
 ...
@@ -118,9 +120,9 @@ Il est possible d'ajouter des capteurs au véhicule simulé en ajoutant des lign
 ...
 ```
 
-### Forme associée à un capteur
+### Shape associated with a sensor
 
-Il est possible de modifier la forme associée à un capteur en modifiant la partie ```Shape``` ou ```Transform``` du capteur. Il faut alors ce référer à la documentation de Webots pour connaître les paramètres nécéssaires à la modification de la forme du capteur. (voir https://cyberbotics.com/doc/guide/sensors)
+You can change the shape associated with a sensor by changing the ```Shape``` or ```Transform``` portion of the sensor. Refer to the Webots documentation for parameters to modify the sensor shape. (see https://cyberbotics.com/doc/guide/sensors)
 
 ```proto
 ...
@@ -159,3 +161,14 @@ Il est possible de modifier la forme associée à un capteur en modifiant la par
       }
 ...
 ```
+
+
+## Tutorials
+
+- [tuto_installation.md](tutorials/tuto_installation.md) : This tutorial describes how to install the simulator.
+- [tuto_usage.md](tutorials/tuto_usage.md) : This tutorial describes how to use the simulator.
+- [tuto_modifying_robot.md](tutorials/tuto_modifying_robot.md) : This tutorial describes how to modify the 3D models used in the simulator.
+- [tuto_modifying_world.md](tutorials/tuto_modifying_world.md) : This tutorial describes how to modify the worlds used in the simulator.
+- [tuto_modifying_controller.md](tutorials/tuto_modifying_controller.md) : This tutorial describes how to modify the controllers used in the simulator.
+
+[main_readme](../README.md)

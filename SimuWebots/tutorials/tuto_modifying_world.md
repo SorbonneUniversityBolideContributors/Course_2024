@@ -1,29 +1,29 @@
-# Tutoriel : Modifier le monde de simulation Webots
+# Tutorial: Changing the Webots Simulation World
 
-Ce tutoriel a pour but de vous apprendre à modifier le monde de simulation Webots pour y ajouter des objets, des robots etc.
+This tutorial aims to teach you how to modify the Webots simulation world to add objects, robots etc.
 
 Piste 2023 ENS | Piste Saint-Cyr
 :-------------------------:|:-------------------------:
 ![](Piste_2023_ENS.png)      |![](Piste_StCyr.png)
 
 
-## Prérequis
+## Prerequisites
 
-Avoir installé Webots sur votre ordinateur (voir [tuto_installation.md](tuto_installation.md) pour plus d'informations).
+Have Webots installed on your computer (see [tuto_installation.md](tuto_installation.md) for more information).
 
-## Procédure de modification du monde de simulation
+## Simulation World Modification Procedure
 
-### Depuis l'interface graphique
+### From the GUI
 
-Pour déplacer un objet dans le monde de simulation, il suffit de le sélectionner dans l'arborescence à gauche de la fenêtre de visualisation graphique ou de cliquer directement dessus dans la fenêtre de visualisation graphique. Une fois l'objet sélectionné, il est possible de le déplacer en cliquant sur les axes de déplacement (flèches) ou de rotation (cercles).
+To move an object in the simulation world, simply select it in the tree view to the left of the graphical viewport or click it directly in the graphical viewport. Once the object is selected, it is possible to move it by clicking on the motion (arrows) or rotation (circles) axes.
 
-Les objets peuvent être copiés, collés, supprimés, dupliqués, etc. en utilisant les boutons de l'interface graphique ou les raccourcis clavier associés.
+Objects can be copied, pasted, deleted, duplicated, etc. using the GUI buttons or related keyboard shortcuts.
 
-### Depuis le fichier .wbt
+### From the file . wbt
 
-Il est également possible de modifier le monde de simulation en modifiant le fichier ```.wbt``` associé.
+It is also possible to modify the simulation world by modifying the associated ```.wbt``` file.
 
-Voici un exemple de l'ajout d'un obstacle dans le monde de simulation :
+Here is an example of adding an obstacle in the simulation world:
 
 ```proto
 WoodenBox {
@@ -34,4 +34,15 @@ WoodenBox {
 }
 ```
 
-Il est possible de modifier les paramètres de l'objet (position, rotation, taille, masse, etc.) en modifiant les valeurs associées.
+It is possible to modify the parameters of the object (position, rotation, size, mass, etc.) by modifying the associated values.
+
+
+## Tutorials
+
+- [tuto_installation.md](tutorials/tuto_installation.md) : This tutorial describes how to install the simulator.
+- [tuto_usage.md](tutorials/tuto_usage.md) : This tutorial describes how to use the simulator.
+- [tuto_modifying_robot.md](tutorials/tuto_modifying_robot.md) : This tutorial describes how to modify the 3D models used in the simulator.
+- [tuto_modifying_world.md](tutorials/tuto_modifying_world.md) : This tutorial describes how to modify the worlds used in the simulator.
+- [tuto_modifying_controller.md](tutorials/tuto_modifying_controller.md) : This tutorial describes how to modify the controllers used in the simulator.
+
+[main_readme](../README.md)

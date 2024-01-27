@@ -1,17 +1,16 @@
+# Tutorial: Webots installation
 
-# Tutoriel : Installation de Webots
+This tutorial describes how to install the Webots simulator on a Linux environment so that it can be used with ROS1 Noetic.
 
-Ce tutoriel décrit la procédure d'installation du simulateur Webots sur un environnement Linux de façon à pouvoir l'utiliser avec ROS1 Noetic.
+## Prerequisites
+- a PC environment compatible with ROS1 Noetic (e.g. Ubuntu 20.xx)
+- administrator rights in this environment (sudo under Linux)
+- have a working installation of ROS1 (preferably ROS Noetic)
 
-## Pré-requis
-- disposer d'un environnement de PC compatible avec ROS1 Noetic (par exemple : Ubuntu 20.xx)
-- disposer des droits administrateurs dans cet environnement (sudo sous Linux)
-- Disposer d'une installation fonctionnelle de ROS1 (de préférence ROS Noetic)
+An Internet connection is required to install the software and download certain simulator data (3D models, textures, etc.). 
 
-Une connexion Internet sera nécessaire pour l'installation du logiciel et pour le téléchargement de certaines données du simulateur (modèles 3D, textures ...). 
-
-## Procédure d'installation de Webots :
-Sous Linux, dans un terminal, entrer les commandes :
+## Webots installation procedure :
+Under Linux, in a terminal, enter the commands :
 ```bash
 wget -qO- https://cyberbotics.com/Cyberbotics.asc | sudo apt-key add -
 sudo apt-add-repository 'deb https://cyberbotics.com/debian/ binary-amd64/'
@@ -21,13 +20,23 @@ sudo apt-get update
 sudo apt-get install webots
 ```
 
-Une fois l'installation terminée, il est possible de lancer WeBots directement depuis le terminal en utilisant la commande :
+Once installation is complete, you can launch WeBots directly from the terminal using the command :
 ```bash
 webots
 ```
  
-Pour pouvoir utiliser l'environnement de simulation du robot, il faut également disposer du package ROS **webots_ros** :
+To use the robot simulation environment, you also need the **webots_ros** ROS package:
 
 ```bash
 sudo apt-get install ros-noetic-webots-ros
 ```
+
+## Tutorials
+
+- [tuto_installation.md](tutorials/tuto_installation.md) : This tutorial describes how to install the simulator.
+- [tuto_usage.md](tutorials/tuto_usage.md) : This tutorial describes how to use the simulator.
+- [tuto_modifying_robot.md](tutorials/tuto_modifying_robot.md) : This tutorial describes how to modify the 3D models used in the simulator.
+- [tuto_modifying_world.md](tutorials/tuto_modifying_world.md) : This tutorial describes how to modify the worlds used in the simulator.
+- [tuto_modifying_controller.md](tutorials/tuto_modifying_controller.md) : This tutorial describes how to modify the controllers used in the simulator.
+
+[main_readme](../README.md)
