@@ -78,9 +78,9 @@ class SimuImuPublisher():
 
         # gyro
         angular_velocity = self.gyro.getValues()
-        self.imuFrame.angular_velocity.x = angular_velocity[1]
-        self.imuFrame.angular_velocity.y = angular_velocity[2]
-        self.imuFrame.angular_velocity.z = angular_velocity[0]
+        self.imuFrame.angular_velocity.x = angular_velocity[0]
+        self.imuFrame.angular_velocity.y = angular_velocity[1]
+        self.imuFrame.angular_velocity.z = angular_velocity[2]
 
         self.imuFrame.header.stamp = rospy.Time.now()
         self.pub_imu.publish(self.imuFrame)
