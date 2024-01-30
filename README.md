@@ -4,6 +4,8 @@
 ## Project Overview
 This is a project made by Sorbonne University students. The goal is to make an autonomous RC car that can drive on a track and avoid obstacles for the ENS 2024 race.
 
+The git of the ROS packages is available at [this link](https://github.com/SorbonneUniversityBolideContributors/course_2024_pkgs).
+
 The project is divided into three main packages:
 1. **Perception:** [perception_bolide](https://github.com/SorbonneUniversityBolideContributors/course_2024_pkgs/tree/main/perception_bolide)
 2. **Planning:** [planning_bolide](https://github.com/SorbonneUniversityBolideContributors/course_2024_pkgs/tree/main/planning_bolide)
