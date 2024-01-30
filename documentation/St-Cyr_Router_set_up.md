@@ -1,5 +1,7 @@
 # Setting up the router at St-Cyr to have internet access
 
+<img src="pictures/router.jpg" alt="Router" width="500"/>
+
 This file explain how to give internet access to the router at St-Cyr. Due the impossibility to connect the router to the internet via ethernet, we used another computer (with windows 10 and connected to the internet via wifi) to share its internet connection with the router.
 
 If this configuration isn't possible anymore please contact someone at St-Cyr to find another way to connect the router via ethernet.
@@ -7,6 +9,7 @@ If this configuration isn't possible anymore please contact someone at St-Cyr to
 All the **password** are on the google drive in the `/PFE_2024/Identifiers` file
 
 (All the words for the computer and router interface are in french because thei're in french)
+
 
 ## Connect the router to the computer
 

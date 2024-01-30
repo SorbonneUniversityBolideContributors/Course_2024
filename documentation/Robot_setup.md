@@ -2,6 +2,11 @@
 
 This file contains various information to setup the bolide.
 
+
+![Bolide](pictures/bolide_top.jpg) | ![Bolide](pictures/bolide_front.jpg)                        
+:-------------------------:|:-------------------------:
+
+
 ### Table of contents
 
 - [Table of contents](#table-of-contents)

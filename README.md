@@ -1,6 +1,5 @@
 # Autonomous RC Car Race 2024
 
-
 ## Project Overview
 This is a project made by Sorbonne University students. The goal is to make an autonomous RC car that can drive on a track and avoid obstacles for the ENS 2024 race.
 
@@ -12,6 +11,9 @@ The project is divided into five main parts:
 - **Documentation** [documentation](documentation/) contains some basic documentation for the project
 - **Simulation** [SimuWebots](SimuWebots/) contains the simulation of the bolide in Webots
 - **STM32 code** [STM32_software](STM32_software/) contains the code for the STM32 microcontroller
+
+![Bolide](documentation/pictures/bolide_front.jpg) | ![Bolide](documentation/pictures/bolide_front_with_chassis.jpg)
+:-------------------------:|:-------------------------:
 
 ## ENS Race Overview
 https://ajuton-ens.github.io/CourseVoituresAutonomesSaclay/
