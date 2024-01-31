@@ -7,6 +7,11 @@ Piste 2023 ENS | Piste Saint-Cyr
 ![](Piste_2023_ENS.png)      |![](Piste_StCyr.png)
 
 
+Real Saint-Cyr Track |
+:-------------------------:
+![](../../documentation/pictures/st_cyr_track.jpg)
+
+
 ## Prerequisites
 
 Have Webots installed on your computer (see [tuto_installation.md](tuto_installation.md) for more information).

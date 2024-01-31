@@ -4,9 +4,13 @@ This tutorial describes how to modify the 3D models used in the Webots simulator
 
 The procedure is quite simple, but requires a good knowledge of the Webots simulator and its syntax.
 
-Front of Vehicle   |  Rear of Vehicle
+Front of Simulated Vehicle   |  Rear of Simulated Vehicle
 :-------------------------:|:-------------------------:
 ![](bolide_front.jpg)      |![bolide_back.jpg](bolide_back.jpg)
+:-------------------------:|:-------------------------:
+Front of the Real Vehicle  |  Rear of the Real Vehicle
+![](../../documentation/pictures/bolide_front_with_chassis.jpg)      |![bolide_back_with_chassis.jpg](../../documentation/pictures/bolide_rear_with_chassis.jpg)
+
 
 
 ## Description of vehicle files
