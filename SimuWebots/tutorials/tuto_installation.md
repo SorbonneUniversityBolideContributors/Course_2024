@@ -33,10 +33,10 @@ sudo apt-get install ros-noetic-webots-ros
 
 ## Tutorials
 
-- [tuto_installation.md](tutorials/tuto_installation.md) : This tutorial describes how to install the simulator.
-- [tuto_usage.md](tutorials/tuto_usage.md) : This tutorial describes how to use the simulator.
-- [tuto_modifying_robot.md](tutorials/tuto_modifying_robot.md) : This tutorial describes how to modify the 3D models used in the simulator.
-- [tuto_modifying_world.md](tutorials/tuto_modifying_world.md) : This tutorial describes how to modify the worlds used in the simulator.
-- [tuto_modifying_controller.md](tutorials/tuto_modifying_controller.md) : This tutorial describes how to modify the controllers used in the simulator.
+- [tuto_installation.md](tuto_installation.md) : This tutorial describes how to install the simulator.
+- [tuto_usage.md](tuto_usage.md) : This tutorial describes how to use the simulator.
+- [tuto_modifying_robot.md](tuto_modifying_robot.md) : This tutorial describes how to modify the 3D models used in the simulator.
+- [tuto_modifying_world.md](tuto_modifying_world.md) : This tutorial describes how to modify the worlds used in the simulator.
+- [tuto_modifying_controller.md](tuto_modifying_controller.md) : This tutorial describes how to modify the controllers used in the simulator.
 
 [main_readme](../README.md)
