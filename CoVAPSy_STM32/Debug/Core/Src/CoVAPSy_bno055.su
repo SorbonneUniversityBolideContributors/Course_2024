@@ -1,0 +1,3 @@
+../Core/Src/CoVAPSy_bno055.c:4:6:bno055_init	24	static
+../Core/Src/CoVAPSy_bno055.c:96:9:bno055_lecture_16bits	32	static
+../Core/Src/CoVAPSy_bno055.c:106:9:bno055_lecture_8bits	32	static
