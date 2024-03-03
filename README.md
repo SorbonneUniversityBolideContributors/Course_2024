@@ -10,7 +10,7 @@ The project is divided into five main parts:
 - **Bolide scripts** [bolide_scripts](bolide_scripts/) contains scripts for specific implementations on the vehicle
 - **Documentation** [documentation](documentation/) contains some basic documentation for the project
 - **Simulation** [SimuWebots](SimuWebots/) contains the simulation of the bolide in Webots
-- **STM32 code** [STM32_software](STM32_software/) contains the code for the STM32 microcontroller
+- **STM32 code** [CoVAPSy_STM32](CoVAPSy_STM32/) contains the code for the STM32 microcontroller
 
 ![Bolide](documentation/pictures/bolide_front.jpg) | ![Bolide](documentation/pictures/bolide_front_with_chassis.jpg)
 :-------------------------:|:-------------------------:

@@ -98,12 +98,6 @@ When connected to the RPI4, you can change the network configuration as explaine
 roslaunch planning_bolide ready_for_nav.launch
 ```
 
-- If you only want the control node (for teleoperation for example), you can launch the following node:
-
-```bash
-rosrun control_bolide control_node.py
-```
-
 - If you only want the sensors nodes, you can use the following launch file:
 
 ```bash
