@@ -472,8 +472,8 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef* htim)
 						break;
 				somme_intervalles_us += tableau_intervalles_us[i];
 
-				i--;
-				if (i < 0) i = 15;
+				i = (i - 1)%16;
+				
 				nb_intervalles++;
 
 			}while ((somme_intervalles_us<10000) && (nb_intervalles < 16));
