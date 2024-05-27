@@ -1,6 +1,6 @@
 # Autonomous RC Car Race 2024
 
-![Us at ENS](documentation/pictures/us.jpeg)
+![Us at ENS](documentation/pictures/ens_pic.jpeg)
 
 ## Project Overview
 This is a project made by Sorbonne University students. The goal is to make an autonomous RC car that can drive on a track and avoid obstacles for the ENS 2024 race.
