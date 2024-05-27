@@ -3,16 +3,17 @@
 ![Us at ENS](documentation/pictures/ens_pic.jpeg)
 
 ## Project Overview
-This is a project made by Sorbonne University students. The goal is to make an autonomous RC car that can drive on a track and avoid obstacles for the ENS 2024 race.
+This is a project made by Sorbonne University students. The goal is to make autonomous RC cars that can drive around a track and avoid obstacles for the ENS organized CoVAPSy (*Course Voiture Autonome Paris Saclay*) race.
 
-The git of the ROS packages is available at [this link](https://github.com/SorbonneUniversityBolideContributors/course_2024_pkgs).
+We entered two cars in the 2024 race, both using two different navigation heuristics. The hardware is pretty much identical between the two cars, but one of them uses a Dynamixel instead of a standard Servo for steering control. 
 
 The project is divided into five main parts:
-- **ROS packages** [course_2024_pkgs](https://github.com/SorbonneUniversityBolideContributors/course_2024_pkgs)
+- **ROS packages for the first car (Reactive)** [course_2024_pkgs](https://github.com/SorbonneUniversityBolideContributors/course_2024_pkgs)
+- **ROS packages for the second car (SLAM)** [course_2024_pkgs](https://github.com/SorbonneUniversityBolideContributors/course_2024_pkgs)
 - **Bolide scripts** [bolide_scripts](bolide_scripts/) contains scripts for specific implementations on the vehicle
 - **Documentation** [documentation](documentation/) contains some basic documentation for the project
 - **Simulation** [SimuWebots](SimuWebots/) contains the simulation of the bolide in Webots
-- **STM32 code** [CoVAPSy_STM32](CoVAPSy_STM32/) contains the code for the STM32 microcontroller
+- **STM32 code** [CoVAPSy_STM32](CoVAPSy_STM32/) contains the code for the STM32 microcontroller that link the car sensors to the Raspberry Pi
 
 ![Bolide](documentation/pictures/cars.jpeg)
 :-------------------------:|:-------------------------:
