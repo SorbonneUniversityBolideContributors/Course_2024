@@ -9,7 +9,7 @@ We entered two cars in the 2024 race, both using two different navigation heuris
 
 The project is divided into five main parts:
 - **ROS packages for the first car (Reactive)** [course_2024_pkgs](https://github.com/SorbonneUniversityBolideContributors/course_2024_pkgs)
-- **ROS packages for the second car (SLAM)** [course_2024_pkgs]([https://github.com/SorbonneUniversityBolideContributors/course_2024_slam_pkgs])
+- **ROS packages for the second car (SLAM)** [course_2024_pkgs](https://github.com/SorbonneUniversityBolideContributors/course_2024_slam_pkgs)
 - **Bolide scripts** [bolide_scripts](bolide_scripts/) contains scripts for specific implementations on the vehicle
 - **Documentation** [documentation](documentation/) contains some basic documentation for the project
 - **Simulation** [SimuWebots](SimuWebots/) contains the simulation of the bolide in Webots
